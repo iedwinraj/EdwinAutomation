@@ -23,6 +23,7 @@ public class BuildingsPage {
 	public BuildingsPage(WebDriver driver) {
 		this.driver=driver;
 		elementUtil= new ElementUtils(driver);
+		System.out.println("Edwin");
 	}
 	
 public void verifyOnlineVideosMainMenu(String admmn,String admmnread)   {
@@ -63,4 +64,5 @@ public void verifyOnlineVideosMainMenu(String admmn,String admmnread)   {
 	 * 
 	 * }
 	 */
-	  }}
+	  }
+}
