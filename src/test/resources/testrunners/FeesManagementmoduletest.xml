@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="User role FeesManagement Module test verification Test automtion regression suite"
+	thread-count="4" parallel="tests" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+<!-- 	<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.FeesManagmentmodulescreenstest" />
+		</classes>
+	</test>
+	
+	<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.SchoolERPAdminFeesManagementmoduletest" />
+		</classes>
+	</test>
+	
+	<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.PrincipalloginFeesManagementmoduletest" />
+		</classes>
+	</test> -->
+	
+	<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.VicePrincipalloginFeesManagementmoduletest" />
+		</classes>
+	</test>
+	
+	<!-- <test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.LibrarianFeesManagementmoduletest" />
+		</classes>
+	</test>
+	
+	<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaMarketingHeadFeesManagementmoduletest" />
+		</classes>
+	</test>
+	
+	<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadFeesManagementmoduletest" />
+		</classes>
+	</test>
+		
+		<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadFeesManagementmoduletest" />
+		</classes>
+	</test>
+	
+		<test name="FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.SchoolAccountHeadFeesManagementmoduletest" />
+		</classes>
+	</test> -->
+	
+	</suite> 

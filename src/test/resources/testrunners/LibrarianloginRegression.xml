@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="LibrarianLogin User Test automtion regression suite"
+	thread-count="4" parallel="none" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test
+		name="Librarian_Administration Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianDashboardpageparameterizedtest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_Configurations Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianConfigurationsManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_School Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.LibrarianSMMtest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_Student Lifecycle Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianSLCManagementtest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_OnlineVideos module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianOnlineVideosmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_SendEmail module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianSendEmailmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianStudentManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_Circular module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianCircularmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_Report Card module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianReportCardmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianFeesManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_Employees module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianEmployeesmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Administration_Incident module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianIncidentmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="Librarian_Adminstration_Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.LibrarianStoriesmodulescreenstest" />
+		</classes>
+	</test>
+
+</suite> 

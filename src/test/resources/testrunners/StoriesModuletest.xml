@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="User role Stories Module test verification Test automtion regression suite"
+	thread-count="4" parallel="tests" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.Storiesmodulescreenstest" />
+		</classes>
+	</test>
+	
+<!-- 	<test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.SchoolERPAdminStoriesmodulescreenstest" />
+		</classes>
+	</test> -->
+	
+	<!-- <test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.PrincipalloginStoriesmodulescreenstest" />
+		</classes>
+	</test> -->
+	<!-- <test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.VicePrincipalloginStoriesmodulescreenstest" />
+		</classes>
+	</test> -->
+	<!-- <test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.LibrarianStoriesmodulescreenstest" />
+		</classes>
+	</test> -->
+	<!-- <test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaMarketingHeadStoriesmodulescreenstest" />
+		</classes>
+	</test> -->
+	<!-- <test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadStoriesmodulescreenstest" />
+		</classes>
+	</test> -->
+		<!-- <test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadStoriesmodulescreenstest" />
+		</classes>
+	</test> -->
+	<!-- 	<test name="Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.SchoolAccountHeadStoriesmodulescreenstest" />
+		</classes> 
+	</test> -->
+	</suite> 

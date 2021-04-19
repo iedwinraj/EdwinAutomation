@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite
+	name="NiyogaaAdministartionHead Test automtion regression suite"
+	thread-count="4" parallel="none" verbose="10">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test
+		name="NiyogaaAdministartionHead_Administration Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaadminDashboardpageparameterizedtest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_Configurations Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadConfigurationsManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_School Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyoAdmHeadSMMtest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_Student Lifecycle Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyoAdmHeadSLCManagementtest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_OnlineVideos module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadOnlineVideosmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_SendEmail module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadSendEmailmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadStudentManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_Circular module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadCircularmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_Report Card module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadReportCardmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadFeesManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_Employees module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadEmployeesmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_Incident module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadIncidentmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyogaaAdministartionHead_Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadStoriesmodulescreenstest" />
+		</classes>
+	</test>
+
+</suite> 

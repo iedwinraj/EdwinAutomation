@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="User role SchoolERP_Admin automtion regression suite"
+	thread-count="4" parallel="none" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+	
+
+	<test
+		name="SchoolERP_Administration Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPDashboardpageparameterizedtest" />
+		</classes>
+	</test>
+
+	<test
+		name="SchoolERP_Admin_Configurations Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminConfigurationsManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="SchoolERP_School Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminSMMtest" />
+		</classes>
+	</test>
+
+	<test
+		name="SchoolERP_Student Life Cycle Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPSLCAdminroleaccesstest" />
+		</classes>
+	</test>
+
+	<test
+		name="SchoolERP_Admin_OnlineVideos Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminOnlineVideosmodulesmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolERP_Admin_SendEmail Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminSendEmailmodulesmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="SchoolERP_Admin_Student Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminStudentManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolERP_Admin_Circular Module_Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminCircularmodulesmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="SchoolERP_Admin_Report Card Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminReportCardmoduletest" />
+		</classes>
+	</test>
+
+
+	<test
+		name="SchoolERP_Admin_Fees Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminFeesManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolERP_Admin_Employees Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminEmployeesmodulesmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolERP_Admin_Incident Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminIncidentmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolERP_Admin_Stories Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolERPAdminStoriesmodulescreenstest" />
+		</classes>
+	</test>
+
+</suite> 

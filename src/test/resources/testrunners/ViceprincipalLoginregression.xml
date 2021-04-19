@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite
+	name="VicePrincipalLogin User Test automtion regression suite"
+	thread-count="4" parallel="none" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test
+		name="VicePrincipalLogin_Administration Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePricipalDashboardpageparameterizedtest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_Configurations Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginConfigurationsManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_Administration_School Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.VPrincipalSMMtest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_Administration_Student Lifecycle Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VPrincipalSLCManagementtest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_OnlineVideos module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginOnlineVideosmoduletest" />
+		</classes>
+	</test>
+
+
+	<test
+		name="VicePrincipalLogin_SendEmail module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginSendEmailmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginStudentManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_Circular module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginCircularmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_Report Card module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginReportCardmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginFeesManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_Employees module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginEmployeesmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="VicePrincipalLogin_Incident module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipallIncidentmoduletest" />
+		</classes>
+	</test>
+
+	<test name="VicePrincipalLogin_Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.VicePrincipalloginStoriesmodulescreenstest" />
+		</classes>
+	</test>
+
+</suite> 

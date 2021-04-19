@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SchoolAccountHead Test automtion regression suite"
+	thread-count="4" parallel="none" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test
+		name="SchoolAccountHead_Administration Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountDashboardpageparameterizedtest" />
+		</classes>
+	</test>
+
+	<test
+		name="SchoolAccountHead_Configurations Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadConfigurationsManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Student Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadStudentManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Student LifeCycle Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchAcctHeadSLCMgmttest" />
+		</classes>
+	</test>
+
+
+	<test name="SchoolAccountHead_OnlineVideos Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadOnlineVideosmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_SendEmail Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadSendEmailmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Student Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadSMMtest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Circular Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadCircularmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Report Card Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadReportCardmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_FeesManagement Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadFeesManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Employees Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadEmployeesmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Incident Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadIncidentmoduletest" />
+		</classes>
+	</test>
+
+	<test name="SchoolAccountHead_Stories Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolAccountHeadStoriesmodulescreenstest" />
+		</classes>
+	</test>
+
+</suite> 

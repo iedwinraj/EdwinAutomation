@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="NiyagaaFinance Test automtion regression suite"
+	thread-count="4" parallel="tests" verbose="10">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test
+		name="NiyagaaFinance_Administration Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.Dashboardpageparameterizedtest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyagaaFinance_Configurations Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadConfigurationsManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyagaaFinance_School Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyoFinanceHeadSMMtest" />
+		</classes>
+	</test>
+
+	<test
+		name="NiyagaaFinance_OnlineVideos module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadOnlineVideosmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_SendEmail module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadSendEmailmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadStudentManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_Circular module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadCircularmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_Report Card module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadReportCardmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_FeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadFeesManagementmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_Employees module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadEmployeesmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_Incident module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadIncidentmoduletest" />
+		</classes>
+	</test>
+
+	<test name="NiyagaaFinance_Stories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadStoriesmodulescreenstest" />
+		</classes>
+	</test>
+
+</suite> 

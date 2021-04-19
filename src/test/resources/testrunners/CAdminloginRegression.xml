@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="CAdmin Test automtion regression suite"
+	thread-count="4" parallel="none" verbose="10">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+
+	<test
+		name="CAdmin_Administration Management Module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.Dashboardpageparameterizedtest" />
+		</classes>
+	</test>
+
+	<test name="CAdmin_Circular_module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.Circularmodulescreenstest" />
+
+		</classes>
+	</test>
+
+	<test name="CAdminConfigurations Management module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.ConfigurationsManagementmodulescreenstest" />
+		</classes>
+	</test>
+
+	<test name="CAdminEmployees module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.Employeesmodulescreenstest" />
+		</classes>
+	</test>
+
+	<test name="CAdminFeesManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.FeesManagmentmodulescreenstest" />
+		</classes>
+	</test>
+
+	<test name="CAdminIncident module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.Incidentmodulescreenstest" />
+		</classes>
+	</test>
+
+	<test name="CAdminOnlineVideos module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.OnlineVideosmodulescreenstest" />
+		</classes>
+
+	</test>
+
+	<test name="CAdminReport Card module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.ReportCardmodulescreenstest" />
+		</classes>
+
+	</test>
+
+	<test
+		name="CAdminRSchoolManagement module NiyoFinanceHeadSMMtest Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SchoolManagementmoduletest" />
+
+		</classes>
+	</test>
+
+	<test name="CAdminRSendEmail module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.SendEmailmodulescreenstest" />
+		</classes>
+	</test>
+
+	<test name="CAdminRStories module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.Storiesmodulescreenstest" />
+		</classes>
+	</test>
+
+	<test name="CAdminRStudent life cycle module Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.Studentlifecyclemoduletest" />
+
+		</classes>
+	</test>
+
+	<test name="CAdminRStudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class
+				name="com.qa.verifyroleacess.tests.StudentManagementmodulescreenstest" />
+		</classes>
+
+	</test>
+
+</suite> 

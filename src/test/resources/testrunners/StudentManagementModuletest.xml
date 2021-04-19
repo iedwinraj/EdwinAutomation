@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="User role StudentManagement Module test verification Test automtion regression suite"
+	thread-count="4" parallel="tests" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.StudentManagementmodulescreenstest" />
+		</classes>
+	</test>
+	
+<!-- 	<test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.SchoolERPAdminStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+	
+	<!-- <test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.PrincipalloginStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+	<!-- <test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.VicePrincipalloginStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+	<!-- <test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.LibrarianStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+	<!-- <test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaMarketingHeadStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+	<!-- <test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaFinanceHeadStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+		<!-- <test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.NiyogaaAdministartionHeadStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+		<!-- <test name="StudentManagement module test Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<class name="com.qa.verifyroleacess.tests.SchoolAccountHeadStudentManagementmoduletest" />
+		</classes>
+	</test> -->
+	</suite> 

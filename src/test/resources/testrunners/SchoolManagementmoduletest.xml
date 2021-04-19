@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="User role School Management module test verification Test automtion regression suite"
+	thread-count="4" parallel="tests" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.testlisteners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.testlisteners.TesultsListener" />
+	</listeners>
+
+	<test name="School Management module NiyoFinanceHeadSMMtest Test_chrome_64">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="64" />
+		<classes>
+			<!-- <class name="com.qa.verifyroleacess.tests.SchoolManagementmoduletest" /> -->
+			<!-- <class name="com.qa.verifyroleacess.tests.SchoolERPAdminSMMtest" /> -->
+			<!-- <class name="com.qa.verifyroleacess.tests.LibrarianSMMtest" /> -->
+			<!-- <class name="com.qa.verifyroleacess.tests.PrincipalSMMtest" /> -->
+			<!-- <class name="com.qa.verifyroleacess.tests.VPrincipalSMMtest" /> -->
+			<!-- <class name="com.qa.verifyroleacess.tests.NiyoAdmHeadSMMtest" /> -->
+			<!-- <class name="com.qa.verifyroleacess.tests.NiyoFinanceHeadSMMtest" /> -->
+			<!-- <class name="com.qa.verifyroleacess.tests.NiyoMarketHeadSMMtest" /> -->
+			<class name="com.qa.verifyroleacess.tests.SchoolAccountHeadSMMtest" />
+		</classes>
+	</test>
+
+	
+</suite> 
