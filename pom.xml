@@ -136,8 +136,8 @@
 					</suiteXmlFiles>
 
 					<argLine>
-					-javaagent:"${settings.localRepository}/org/aspectjweaver-1.9.5.jar"
-						<!-- -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar" -->
+					<!-- -javaagent:"${settings.localRepository}/org/aspectjweaver-1.9.5.jar" -->
+						 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 
 				</configuration>

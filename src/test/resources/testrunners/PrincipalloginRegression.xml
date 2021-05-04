@@ -13,7 +13,7 @@
 			class-name="com.qa.opencart.testlisteners.TesultsListener" />
 	</listeners>
 
-	<test
+	<!-- <test
 		name="PrincipalLogin_Administration Management Module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
@@ -21,7 +21,7 @@
 			<class
 				name="com.qa.verifyroleacess.tests.PricipalDashboardpageparameterizedtest" />
 		</classes>
-	</test>
+	</test> -->
 
 	<test
 		name="PrincipalLogin_Configurations Management module test Test_chrome_64">

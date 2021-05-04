@@ -276,10 +276,12 @@ public class ElementUtils{
 		System.out.println("Position of the webelement from top side is "+ycord +" pixels");
 		if (ycord > 1 && ycord < 200) {
 			act.clickAndHold(el1);
-			act.moveByOffset(0, 200).release().build().perform();
+//			act.moveByOffset(0, 200).release().build().perform();
+			act.moveByOffset(0, 50).release().build().perform();
 		}
 		else if(ycord > 200 && ycord < 250) {
 			act.clickAndHold(el1);
+//			act.moveByOffset(0, 30).release().build().perform();
 			act.moveByOffset(0, 30).release().build().perform();
 		}
 	}
@@ -342,7 +344,8 @@ public class ElementUtils{
 	int ycord = point.getY();
 	System.out.println("Position of the webelement from top side is "+ycord +" pixels");
 	if (ycord > 541) {
-	act.clickAndHold(getElement(locator1)).moveByOffset(0,250).release().build().perform();
+//	act.clickAndHold(getElement(locator1)).moveByOffset(0,250).release().build().perform();
+	act.clickAndHold(getElement(locator1)).moveByOffset(0,20).release().build().perform();
 	}
 	}
 }

@@ -11,7 +11,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
-import com.qa.Adminstrationmodule.pages.Buildings;
 import com.qa.Adminstrationmodule.pages.BuildingsPage;
 import com.qa.Adminstrationmodule.pages.CircularmodulescreensPages;
 import com.qa.Adminstrationmodule.pages.ConfigurationsmodulescreensPages;
@@ -34,7 +33,6 @@ import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.pages.RegisterPage;
 import com.qa.verifyroleacess.tests.Buildingstest;
-import com.qa.verifyroleacess.tests.Buildingtest;
 
 
 public class roleaccessBaseTest {
@@ -83,7 +81,8 @@ public class roleaccessBaseTest {
 		driver.manage().timeouts().setScriptTimeout(120, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 		if(driver.getCurrentUrl().equalsIgnoreCase("https://testautomation.pappaya.education/web/database/selector"));{
-				driver.findElement(By.partialLinkText("testautomation_05")).click();
+			//	driver.findElement(By.partialLinkText("testautomation_05")).click();
+				driver.findElement(By.partialLinkText("testautomation_28")).click();
 		}
 		
 		loginpage1 = new testLoginPage(driver);

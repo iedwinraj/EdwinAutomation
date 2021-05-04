@@ -19,7 +19,8 @@ public class testLoginPage {
 	//1. By Locator / OR
 	private By username = By.id("login");
 	private By password = By.id("password");
-	private By loginButton = By.cssSelector("button[value='Log in']");
+	private By loginButton = By.xpath("//button[text()='Log in']");
+//	private By loginButton = By.cssSelector("button[value='Log in']");
 	private By ForgotPwdLink = By.linkText("Forgot Password");
 	private By registerLink = By.linkText("Register");
 	

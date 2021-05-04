@@ -7,9 +7,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.qa.verifyroleacess.utils.ElementUtils;
 import com.qa.verifyroleacess.utils.JavaScriptUtil;
@@ -82,6 +84,10 @@ private String administrationMainmenu1="Administration";
 			// TODO: StaleElementhandle exception
 			  System.out.println("Create button Clicked Successfully");
 		}
+		catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
+			// TODO: handle exception
+			Assert.fail("Create button was not displayed");
+		}
 		
 		}
 		public void  createbuttonverifynomethod() {
@@ -89,7 +95,7 @@ private String administrationMainmenu1="Administration";
 		//	  Thread.sleep(5000);
 			elementUtil.waitForElementToBeVisible(selectrecord, 10);
 			  assertFalse(elementUtil.doIsDisplayed(Createbutton),"Create button is displayed,Should not be displayed");
-		} catch(org.openqa.selenium.NoSuchElementException e) {
+		} catch(org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 		System.out.println("Create button is not displayed"); 
 		} //catch (InterruptedException e) {
 		//TODO Auto-generated catch block
@@ -111,13 +117,17 @@ private String administrationMainmenu1="Administration";
 				// TODO: StaleElementhandle exception
 				  System.out.println("Edit button Clicked Successfully");
 			}
+			catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
+				Assert.fail("Edit  button was not displayed");
+				// TODO: handle exception
+			}
 			
 			}
 			public void  Editbuttonverifynomethod() {
 			try {
 			//	  Thread.sleep(5000);
 				  assertFalse(elementUtil.doIsDisplayed(Editbutton),"Edit button is displayed,Should not be displayed");
-			} catch(org.openqa.selenium.NoSuchElementException e) {
+			} catch(org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 			System.out.println("Edit button is not displayed"); 
 			} //catch (InterruptedException e) {
 			//TODO Auto-generated catch block
@@ -129,8 +139,10 @@ private String administrationMainmenu1="Administration";
 			}
 		
 		public void  Deletebuttonverifymethod() {
+				SoftAssert Assert1= new SoftAssert();
 			try {
 	//		elementUtil.waitForElementToBeLocated(Deletebutton, 5);  
+				elementUtil.clickWhenReady(Actionbutton, 5);
 			Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Deletebutton,5)," Delete button displayed");
 			//assertTrue(elementUtil.doIsDisplayed(Createbutton), "The Create button displayed Successfully");
 			}
@@ -138,17 +150,20 @@ private String administrationMainmenu1="Administration";
 				// TODO: StaleElementhandle exception
 				  System.out.println("Delete button Clicked Successfully");
 			}
-			catch (NoSuchElementException e) {
+			catch (NoSuchElementException|TimeoutException e) {
 				// TODO: StaleElementhandle exception
-				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Deletebutton,5)," Delete button displayed");
+//				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Deletebutton,5)," Delete button displayed");
+				Assert.fail("Delete button not displayed");
+				
 			}
-			
+			Assert1.assertAll();
 			}
 			public void  Deletebuttonverifynomethod() {
 			try {
 			//	  Thread.sleep(5000);
-				  assertFalse(elementUtil.doIsDisplayed(Deletebutton),"Delete button is displayed,Should not be displayed");
-			} catch(org.openqa.selenium.NoSuchElementException e) {
+				elementUtil.clickWhenReady(Actionbutton, 5);
+				assertFalse(elementUtil.doIsDisplayed(Deletebutton),"Delete button is displayed,Should not be displayed");
+			} catch(org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 			System.out.println("Delete button is not displayed"); 
 			} //catch (InterruptedException e) {
 			//TODO Auto-generated catch block
@@ -180,6 +195,7 @@ private String administrationMainmenu1="Administration";
 		  }
 		  }
 	public void verifyorgsubmenuRead(String Org,String OrgRead) {
+		SoftAssert assert1= new SoftAssert();
 		  if(OrgRead.equalsIgnoreCase("Yes")) {  	 
 			  Assert.assertTrue(elementUtil.verifyelementIsDisplayed(OrganizationsSubmenu,20),Org+" Sub menu Should be displayed, but was not displayed");
 			  String title =elementUtil.doGetText(OrganizationsSubmenu);  
@@ -188,12 +204,14 @@ private String administrationMainmenu1="Administration";
 				 elementUtil.clickWhenReady(OrganizationsSubmenu, 10);
 		  }else {
 			  try {
-					assertFalse(elementUtil.doIsDisplayed(OrganizationsSubmenu),Org+" Sub menu is displayed,Should not be displayed");
-					    } catch (org.openqa.selenium.NoSuchElementException e) {
+				  assert1.assertFalse(elementUtil.doIsDisplayed(OrganizationsSubmenu),Org+" Sub menu is displayed,Should not be displayed");
+				  elementUtil.clickWhenReady(OrganizationsSubmenu, 10);
+					    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 					    	System.out.println(Org+" Sub menu  Main menu is not displayed" );
 					    }
 		  
 		  }
+		  assert1.assertAll();
 		  }
 	public void verifyorgsubmenuCreate(String OrgCreate) {
 		
@@ -216,7 +234,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyorgsubmenuDelete(String OrgEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(OrgEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -225,6 +243,7 @@ private String administrationMainmenu1="Administration";
 		  }	
 		  }	
 	public void verifyUserssubmenuRead(String Users,String UsersRead) {
+			SoftAssert asssert1= new SoftAssert();
 		  if(UsersRead.equalsIgnoreCase("Yes")) {  	 
 			  Assert.assertTrue(elementUtil.verifyelementIsDisplayed(UsersSubmenu,20),Users+" Sub menu Should be displayed, but was not displayed");
 			  String title =elementUtil.doGetText(UsersSubmenu);  
@@ -233,12 +252,15 @@ private String administrationMainmenu1="Administration";
 				 elementUtil.clickWhenReady(UsersSubmenu, 5);
 		  }else {
 			  try {
-					assertFalse(elementUtil.doIsDisplayed(UsersSubmenu),Users+" Sub menu is displayed,Should not be displayed");
-					    } catch (org.openqa.selenium.NoSuchElementException e) {
+				  asssert1.assertFalse(elementUtil.doIsDisplayed(UsersSubmenu),Users+" Sub menu is displayed,Should not be displayed");
+				  elementUtil.clickWhenReady(UsersSubmenu, 5);
+					    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 					    	System.out.println(Users+" Sub menu is not displayed" );
 					    }
+			  
 		  
 		  }
+		  asssert1.assertAll();
 		  }
 	public void verifyUserssubmenuCreate(String UsersCreate) {
 		
@@ -263,7 +285,7 @@ private String administrationMainmenu1="Administration";
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
 		  
 		  if(UsersEdit.equalsIgnoreCase("Yes")) {
-			  elementUtil.clickWhenReady(Actionbutton, 5);
+			  // elementUtil.clickWhenReady(Actionbutton, 5);
 			  Deletebuttonverifymethod();	
 		  }else 
 		  {
@@ -322,6 +344,7 @@ private String administrationMainmenu1="Administration";
 		  }	
 		  }	  
 	public void verifyMasterDataCopysubmenuRead(String MasterDataCopy,String MasterDataCopyRead) {
+		SoftAssert assert1= new SoftAssert();
 		  if(MasterDataCopyRead.equalsIgnoreCase("Yes")) {  	 
 			  Assert.assertTrue(elementUtil.verifyelementIsDisplayed(MasterDataCopySubmenu,20),MasterDataCopy+" Sub menu Should be displayed, but was not displayed");
 			  String title =elementUtil.doGetText(MasterDataCopySubmenu);  
@@ -331,12 +354,15 @@ private String administrationMainmenu1="Administration";
 				 elementUtil.clickWhenReady(Closebutton, 5);
 		  }else {
 			  try {
-					assertFalse(elementUtil.doIsDisplayed(MasterDataCopySubmenu),MasterDataCopy+" Sub menu is displayed,Should not be displayed");
-					    } catch (org.openqa.selenium.NoSuchElementException e) {
+					assert1.assertFalse(elementUtil.doIsDisplayed(MasterDataCopySubmenu),MasterDataCopy+" Sub menu is displayed,Should not be displayed");
+					elementUtil.clickWhenReady(MasterDataCopySubmenu, 5);
+					elementUtil.clickWhenReady(Closebutton, 5);
+					    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 					    	System.out.println(MasterDataCopy+" Sub menu is not displayed" );
 					    }
 		  
 		  }
+		  assert1.assertAll();
 		  }
 	public void verifyMasterDataCopysubmenuCreate(String MasterDataCopyCreate) {
 		
@@ -370,7 +396,7 @@ private String administrationMainmenu1="Administration";
 		  	  
 	public void verifyMasterDataCopysubmenuDelete(String MasterDataCopyEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(MasterDataCopyEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -379,6 +405,7 @@ private String administrationMainmenu1="Administration";
 		  }	
 		  }
 	public void verifyOtherMasterssubmenuRead(String OtherMasters,String OtherMastersread) {
+		SoftAssert assert1= new SoftAssert();
 		  if(OtherMastersread.equalsIgnoreCase("Yes")) {  	 
 			  Assert.assertTrue(elementUtil.verifyelementIsDisplayed(OtherMastersSubmenu,20),OtherMasters+" "+"Should be displayed, but was not displayed");
 			  String title =elementUtil.doGetText(OtherMastersSubmenu); 
@@ -387,13 +414,16 @@ private String administrationMainmenu1="Administration";
 				 elementUtil.clickWhenReady(OtherMastersSubmenu, 10);
 		  }else {
 			  try {
-					assertFalse(elementUtil.doIsDisplayed(OtherMastersSubmenu),OtherMastersSubmenu+" "+"Main menu is displayed,Should not be displayed");
+				  assert1.assertFalse(elementUtil.doIsDisplayed(OtherMastersSubmenu),OtherMastersSubmenu+" "+"Main menu is displayed,Should not be displayed");
+					 elementUtil.clickWhenReady(OtherMastersSubmenu, 10);
 					    } catch (org.openqa.selenium.NoSuchElementException e) {
 					    	System.out.println(OtherMasters+" "+"Main menu is not displayed" );
 					    }
 		  }
+		  assert1.assertAll();
 		  }
 	public void verifyAcademicYearChildmenuRead(String AcademicYear,String AcademicYearRead) {
+		SoftAssert assert1= new SoftAssert();
 		  if(AcademicYearRead.equalsIgnoreCase("Yes")) {  	 
 			  Assert.assertTrue(elementUtil.verifyelementIsDisplayed(AcademicYearchildmenu,20),AcademicYear+" child menu Should be displayed, but was not displayed");
 			  String title =elementUtil.doGetText(AcademicYearchildmenu);  
@@ -402,12 +432,14 @@ private String administrationMainmenu1="Administration";
 				 elementUtil.clickWhenReady(AcademicYearchildmenu, 5);
 		  }else {
 			  try {
-					assertFalse(elementUtil.doIsDisplayed(AcademicYearchildmenu),AcademicYear+" child menu is displayed,Should not be displayed");
+					assert1.assertFalse(elementUtil.doIsDisplayed(AcademicYearchildmenu),AcademicYear+" child menu is displayed,Should not be displayed");
+					elementUtil.clickWhenReady(AcademicYearchildmenu, 5);
 					    } catch (org.openqa.selenium.NoSuchElementException e) {
 					    	System.out.println(AcademicYear+" child menu is not displayed" );
 					    }
 		  
 		  }
+		  assert1.assertAll();
 		  }
 	public void verifyAcademicYearChildmenuCreate(String AcademicYearCreate) {
 		
@@ -430,7 +462,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyAcademicYearChildmenuDelete(String AcademicYearEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(AcademicYearEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -475,7 +507,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyShiftChildmenuDelete(String ShiftDelete) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(ShiftDelete.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -520,7 +552,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyStreamChildmenuDelete(String StreamEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(StreamEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -565,7 +597,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyBoardChildmenuDelete(String BoardEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(BoardEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -611,7 +643,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyCountryChildmenuDelete(String CountryEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(CountryEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -657,7 +689,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyAccountAccessLevelChildmenuDelete(String AccountAccessLevelEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(AccountAccessLevelEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -703,7 +735,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyStateChildmenuDelete(String StateEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(StateEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -750,7 +782,7 @@ private String administrationMainmenu1="Administration";
 	public void verifyDistrictChildmenuDelete(String DistrictEdit) {
 	
 			elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-			  elementUtil.clickWhenReady(Actionbutton, 5);
+			  // elementUtil.clickWhenReady(Actionbutton, 5);
 			  if(DistrictEdit.equalsIgnoreCase("Yes")) {
 				  Deletebuttonverifymethod();	
 			  }else 
@@ -811,7 +843,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyReligionChildmenuDelete(String ReligionEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(ReligionEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -857,7 +889,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyCommunityChildmenuDelete(String CommunityEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(CommunityEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -903,7 +935,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyNationalityChildmenuDelete(String NationalityEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(NationalityEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -948,7 +980,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyBloodGroupChildmenuDelete(String BloodGroupEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(BloodGroupEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -994,7 +1026,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyEnquirySourceChildmenuDelete(String EnquirySourceEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(EnquirySourceEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -1040,7 +1072,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyEnquiryFollowupStatusChildmenuDelete(String EnquiryFollowupStatusEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(EnquiryFollowupStatusEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -1086,7 +1118,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyEnquiryFollowupModeChildmenuDelete(String EnquiryFollowupModeEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(EnquiryFollowupModeEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -1142,7 +1174,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyGradeConfChildmenuDelete(String GradeConfEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(GradeConfEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -1188,7 +1220,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyAdmConfigurationChildmenuDelete(String AdmConfigurationEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(AdmConfigurationEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -1234,7 +1266,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyOnlineVideosConfChildmenuDelete(String OnlineVideosConfEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(OnlineVideosConfEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 
@@ -1280,7 +1312,7 @@ private String administrationMainmenu1="Administration";
 		  }	  
 	public void verifyCutOffMasterChildmenuDelete(String CutOffMasterEdit) {
 	//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
-		  elementUtil.clickWhenReady(Actionbutton, 5);
+		  // elementUtil.clickWhenReady(Actionbutton, 5);
 		  if(CutOffMasterEdit.equalsIgnoreCase("Yes")) {
 			  Deletebuttonverifymethod();	
 		  }else 

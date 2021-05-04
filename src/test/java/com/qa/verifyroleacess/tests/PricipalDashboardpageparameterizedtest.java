@@ -13,7 +13,8 @@ public class PricipalDashboardpageparameterizedtest extends roleaccessBaseTest {
 
 	public void DashboadPageSetup() {
 //		dataSheetName = "TC001";
-		dataSheetName = "TC010";
+//		dataSheetName = "TC010";
+		dataSheetName = "VicePricipalDashboard";
 //		dashboardpageparameterized = loginpage1.douserLogin(prop.getProperty("CADMINusername"), prop.getProperty("CADMINpassword"));
 	
 //		dashboardpageparameterized = loginpage1.douserLogin(prop.getProperty("CADMINusername"), prop.getProperty("CADMINpassword"));

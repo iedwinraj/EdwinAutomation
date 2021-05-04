@@ -23,7 +23,7 @@ public class LibrarianOnlineVideosmoduletest extends roleaccessBaseTest{
 	
 //		OnlineVideosmodulescreenspages = loginpage1.dousersOnlineVideosmoduleLogin(prop.getProperty("SchoolERPAdminusername"), prop.getProperty("SchoolERPAdminpassword"));
 //		OnlineVideosmodulescreenspages = loginpage1.dousersOnlineVideosmoduleLogin(prop.getProperty("CADMINusername"), prop.getProperty("CADMINpassword"));
-		OnlineVideosmodulescreenspages = loginpage1.dousersbuildingtestmodulesLogin(prop.getProperty("Librarianusername"), prop.getProperty("Librarianpassword"));
+		OnlineVideosmodulescreenspages = loginpage1.dousersOnlineVideosmoduleLogin(prop.getProperty("Librarianusername"), prop.getProperty("Librarianpassword"));
 //		OnlineVideosmodulescreenspages = loginpage1.dousersOnlineVideosmoduleLogin(prop.getProperty("Principalusername"), prop.getProperty("Principalpassword"));
 //		OnlineVideosmodulescreenspages = loginpage1.dousersOnlineVideosmoduleLogin(prop.getProperty("VicePrincipalusername"), prop.getProperty("VicePrincipalpassword"));
 //		OnlineVideosmodulescreenspages = loginpage1.dousersOnlineVideosmoduleLogin(prop.getProperty("NiyogaaMarketingHeadusername"), prop.getProperty("NiyogaaMarketingHeadpassword"));
