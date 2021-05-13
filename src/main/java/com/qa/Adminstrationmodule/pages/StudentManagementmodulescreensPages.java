@@ -1407,14 +1407,14 @@ public class StudentManagementmodulescreensPages {
 				try {
 					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10),"List page record should be displayed,but not displayed");
 					Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button Should be displayed,but not displayed");	
-				} catch (org.openqa.selenium.NoSuchElementException e1) {
+				} catch (org.openqa.selenium.NoSuchElementException|TimeoutException  e1) {
 					// TODO: handle exception
 					Assert.fail(Createbutton+" "+"not Found in the"+" "+StudentsProfileSubMenu+" "+"menu");
 				}
 				// TODO: handle exception
 				
 			}
-			catch (org.openqa.selenium.NoSuchElementException e) {
+			catch (org.openqa.selenium.NoSuchElementException|TimeoutException  e) {
 				// TODO: handle exception
 				Assert.fail(Createbutton+" "+"not Found in the"+" "+StudentsProfileSubMenu+" "+"menu");
 			}
@@ -1435,7 +1435,7 @@ public class StudentManagementmodulescreensPages {
 					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10),"List page record should be displayed,but not displayed");
 					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button displayed,Should not be displayed");	
 					
-				} catch (org.openqa.selenium.NoSuchElementException e1) {
+				} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e1) {
 					// TODO: handle exception
 					System.out.println(Createbutton+" "+" was not displayed in the Attendance Configuration Menu");
 				}
@@ -1446,7 +1446,7 @@ public class StudentManagementmodulescreensPages {
 				// TODO: handle exception
 				
 			}
-			catch (org.openqa.selenium.NoSuchElementException e) {
+			catch (org.openqa.selenium.NoSuchElementException|TimeoutException  e) {
 				// TODO: handle exception
 				System.out.println(Createbutton+" "+" was not displayed in the Attendance Configuration Menu");
 			}

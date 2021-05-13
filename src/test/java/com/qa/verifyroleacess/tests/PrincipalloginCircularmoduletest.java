@@ -133,7 +133,7 @@ public class PrincipalloginCircularmoduletest extends roleaccessBaseTest {
 	  }
 	@Test(priority = 20,dataProvider="getdata") 
 	  public void  PrincipalloginNewslettersubmenuEditTest(String CircularMainMenu, String CircularMainMenuRead,String HWMenu,String HWMenuRead,String HWCreate,String HWMenuEdit,String HWMenuDelete,String ANMenu,String ANMenuRead,String ANCreate,String ANMenuEdit,String ANMenuDelete,String DiaryMenu,String DiaryMenuRead,String DiaryCreate,String DiaryMenuEdit,String DiaryMenuDelete,String WSMenu,String WSMenuRead,String WSCreate,String WSMenuEdit,String WSMenuDelete,String NLMenu,String NLMenuRead,String NLCreate,String NLMenuEdit,String NLMenuDelete,String ConfMenu,String ConfMenuRead,String ConfCreate,String ConfMenuEdit,String ConfMenuDelete,String GroupMenu,String GroupMenuRead,String GroupCreate,String GroupMenuEdit,String GroupMenuDelete) {
-		Circularmodulescreenspages.verifyNLMenuEdit(NLMenu,NLMenuRead);
+		Circularmodulescreenspages.verifyNLMenuEdit(NLMenu,NLMenuEdit);
 		  
 	  }
 	@Test(priority = 21,dataProvider="getdata") 

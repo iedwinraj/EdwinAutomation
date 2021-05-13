@@ -235,14 +235,14 @@ public class CircularmodulescreensPages  {
 				elementUtil.clickWhenReady(selectrecord, 3);
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
-					Assert.assertEquals(elementUtil.doGetText(edittitle), "Homework");
+				Assert.assertTrue(elementUtil.doGetText(edittitle).contains("Homework")/* , "Homework" */);
 					Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 10));
 			       }
 			catch (ElementClickInterceptedException e) {
 				try {
 					softAssert1.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 							edittitle + " Edit Page Title Should be displayed, but was not displayed");
-						Assert.assertEquals(elementUtil.doGetText(edittitle), "Homework");
+					Assert.assertTrue(elementUtil.doGetText(edittitle).contains("Homework")/* , "Homework" */);
 						Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 10));
 				} catch (org.openqa.selenium.NoSuchElementException e1) {
 					// TODO: handle exception
@@ -269,7 +269,7 @@ public class CircularmodulescreensPages  {
 				elementUtil.clickWhenReady(selectrecord, 3);
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
-					Assert.assertEquals(elementUtil.doGetText(edittitle), "Homework");
+				Assert.assertTrue(elementUtil.doGetText(edittitle).contains("Homework")/* , "Homework" */);
 					Assert.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 10),"Edit Button was displayed in the,"+ " "+HomeWorksmenu+" Menu Should not be displayed");
 				
 			       }
@@ -711,6 +711,7 @@ public class CircularmodulescreensPages  {
 						getlistpagetitle + "List Page title Should be displayed, but was not displayed");
 				String t3=elementUtil.doGetText(selectrecord);
 				elementUtil.clickWhenReady(selectrecord, 3);
+				elementUtil.waitforelement();
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
 //					Assert.assertEquals(elementUtil.doGetText(edittitle), t3);
@@ -744,6 +745,7 @@ public class CircularmodulescreensPages  {
 						getlistpagetitle + " List Page title Should be displayed, but was not displayed");
 				String selectrecordtitle=	elementUtil.doGetText(selectrecord);
 				elementUtil.clickWhenReady(selectrecord, 3);
+				elementUtil.waitforelement();
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
 //					Assert.assertEquals(elementUtil.doGetText(edittitle), selectrecordtitle);

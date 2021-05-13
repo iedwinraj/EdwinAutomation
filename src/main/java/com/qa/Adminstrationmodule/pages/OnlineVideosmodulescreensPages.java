@@ -30,7 +30,7 @@ public class OnlineVideosmodulescreensPages {
 	private By getlistpagetitle=By.xpath("//ol/li[1]");
 	
 	private By selectrecord=By.xpath("//div[@class='o_kanban_view oe_view o_res_partner_kanban o_kanban_ungrouped']/div");
-	private By selecteditpagerecord=By.xpath("//div[@class='o_kanban_view oe_view o_res_partner_kanban o_kanban_ungrouped']/div");
+	private By selecteditpagerecord=By.xpath("//div[@class='oe_kanban_details']");
 	private By Editbutton=By.xpath("//button[@accesskey='E']");
 	private By Closebutton=By.xpath("//button[text()='×']");
 	private By selectrecordremove=By.xpath("//span[@class='oe_facet_remove']");
@@ -139,21 +139,21 @@ public class OnlineVideosmodulescreensPages {
 				Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(OnlineVideosSubMenulistpagetitle, 10),"The List Page title was not displayed");
 //				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(getlistpagetitle, 10),getlistpagetitle + " Sub menu Should be displayed, but was not displayed");
 					Assert.assertEquals(elementUtil.doGetText(OnlineVideosSubMenulistpagetitle), "Online Videos");
-					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10),"List page record should be displayed,but not displayed");
+					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selecteditpagerecord, 10),"List page record should be displayed,but not displayed");
 					Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button Should be displayed,but not displayed");	
 			       }
 			catch (StaleElementReferenceException e) {
 				try {
-					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10),"List page record should be displayed,but not displayed");
+					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selecteditpagerecord, 10),"List page record should be displayed,but not displayed");
 					Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button Should be displayed,but not displayed");	
-				} catch (org.openqa.selenium.NoSuchElementException e1) {
+				} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e1) {
 					// TODO: handle exception
 					Assert.fail(Createbutton+" "+"not Found in the"+" "+OnlineVideosSubmenu+" "+"menu");
 				}
 				// TODO: handle exception
 				
 			}
-			catch (org.openqa.selenium.NoSuchElementException e) {
+			catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 				// TODO: handle exception
 				Assert.fail(Createbutton+" "+"not Found in the"+" "+OnlineVideosSubmenu+" "+"menu");
 			}
@@ -165,13 +165,13 @@ public class OnlineVideosmodulescreensPages {
 
 //				softAssert1.assertTrue(elementUtil.verifyelementIsDisplayed(getlistpagetitle, 10),getlistpagetitle + " Sub menu Should be displayed, but was not displayed");
 					Assert.assertEquals(elementUtil.doGetText(OnlineVideosSubMenulistpagetitle), "Online Videos");
-					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10),"List page record should be displayed,but not displayed");
+					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selecteditpagerecord, 10),"List page record should be displayed,but not displayed");
 					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button displayed,but Should not be displayed");	
 				
 			       }
 			catch (StaleElementReferenceException e) {
 				try {
-					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10),"List page record should be displayed,but not displayed");
+					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selecteditpagerecord, 10),"List page record should be displayed,but not displayed");
 					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button displayed,Should not be displayed");	
 					
 				} catch (org.openqa.selenium.NoSuchElementException e1) {
@@ -203,7 +203,7 @@ public class OnlineVideosmodulescreensPages {
 						getlistpagetitle + "List Page title Should be displayed, but was not displayed");
 				String t3=elementUtil.doGetText(selecteditpagerecord);
 	//			elementUtil.visibilityOfAllElements(visiblityofallrecords, 30);
-				elementUtil.clickWhenReady(selectrecord, 3);
+				elementUtil.clickWhenReady(selecteditpagerecord, 3);
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
 	//			Assert.assertEquals(elementUtil.doGetText(edittitle), t3);
@@ -217,7 +217,7 @@ public class OnlineVideosmodulescreensPages {
 				try {
 					String t4=elementUtil.doGetText(selecteditpagerecord);
 		//			elementUtil.visibilityOfAllElements(visiblityofallrecords, 30);
-					elementUtil.clickWhenReady(selectrecord, 3);
+					elementUtil.clickWhenReady(selecteditpagerecord, 3);
 					softAssert1.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 							edittitle + " Edit Page Title Should be displayed, but was not displayed");
 		//			Assert.assertEquals(elementUtil.doGetText(edittitle), t4);
@@ -244,7 +244,7 @@ public class OnlineVideosmodulescreensPages {
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(getlistpagetitle, 3),
 						getlistpagetitle + " List Page title Should be displayed, but was not displayed");
 				String selectrecordtitle=	elementUtil.doGetText(selecteditpagerecord);
-				elementUtil.clickWhenReady(selectrecord, 3);
+				elementUtil.clickWhenReady(selecteditpagerecord, 3);
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
 		//			Assert.assertEquals(elementUtil.doGetText(edittitle), selectrecordtitle);

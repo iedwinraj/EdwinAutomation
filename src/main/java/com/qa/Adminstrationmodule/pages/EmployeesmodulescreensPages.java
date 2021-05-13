@@ -45,7 +45,7 @@ public class EmployeesmodulescreensPages {
 	private By selectrecord1=By.xpath("//table[@class='oe_list_content']/tbody/tr[1]");
 	private By selecteditpagerecord1=By.xpath("//th[@class='oe_list_record_selector']/following-sibling::td[1]");
 	private By selecteditpagerecord2=By.xpath("//th[@class='oe_list_record_selector']/following-sibling::td[2]");
-	private By Departmentsselectrecord=By.xpath("//button[@class='btn btn-primary oe_kanban_action oe_kanban_action_button']");
+	private By Departmentsselectrecord=By.xpath("(//button[@class='btn btn-primary oe_kanban_action oe_kanban_action_button'])[3]");
 	private By Departmentsselecteditpagerecord=By.xpath("(//button[@class='btn btn-primary oe_kanban_action oe_kanban_action_button'])[1]");
 	private By DepartmentsEmployeeselectrecord=By.xpath("(//div[@class='oe_kanban_global_click o_kanban_record'])[1]");
 	private By Editbutton=By.xpath("//button[@accesskey='E']");
@@ -228,11 +228,11 @@ public class EmployeesmodulescreensPages {
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
 				Assert.assertEquals(elementUtil.doGetText(edittitle), t3);
-				Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 30));
+				Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 10));
 			       }
 			catch (StaleElementReferenceException e) {
 				// TODO: handle exception
-				Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 30));
+				Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 10));
 			}
 			catch (ElementClickInterceptedException e) {
 				try {
@@ -366,6 +366,7 @@ public class EmployeesmodulescreensPages {
 				 System.out.println("title is : " + title);
 //				 Assert.assertEquals(title, admmn);
 				 elementUtil.clickWhenReady(EmployeesConfSubmenu, 10);	
+				 elementUtil.waitforelement();
 				}
 			  	 catch (NoSuchElementException |TimeoutException e) {	
 			  		try {
@@ -375,6 +376,7 @@ public class EmployeesmodulescreensPages {
 						 System.out.println("title is : " + title);
 						 Assert.assertEquals(title, admmn);
 						 elementUtil.clickWhenReady(EmployeesConfSubmenu, 10);
+						 elementUtil.waitforelement();
 					} catch (NoSuchElementException e2) {
 						// TODO: handle exception
 						Assert.fail(EmployeesConfSubmenu+" "+"Sub Menu Should be display,but not displayed");
@@ -384,9 +386,10 @@ public class EmployeesmodulescreensPages {
 			  
 		  }else {
 			  try {
-				  softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(EmployeesConfSubmenu, 20),EmployeesConfSubmenu+" "+"Sub Menu is displayed,Should not be displayed");
-					 elementUtil.clickWhenReady(EmployeesMainmenu, 10);
-					 softAssert1.assertAll();
+				  elementUtil.waitForElementToBeVisibleAssert(EmployeesConfSubmenu, 10);
+				  elementUtil.clickWhenReady(EmployeesConfSubmenu, 10);
+				  elementUtil.waitforelement();
+				  softAssert1.assertAll();
 					    } 
 			  catch (TimeoutException e) {
 				// TODO: handle exception
@@ -394,11 +397,12 @@ public class EmployeesmodulescreensPages {
 			  catch (org.openqa.selenium.NoSuchElementException e) {
 					    	try {
 					    		elementUtil.mouseaction(Scrollbarelement);
-					    		softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(EmployeesConfSubmenu, 20),EmployeesConfSubmenu+" "+"Sub Menu is displayed,Should not be displayed");
-								 elementUtil.clickWhenReady(EmployeesConfSubmenu, 10);
+					    		elementUtil.waitForElementToBeVisibleAssert(EmployeesConfSubmenu, 10);
+					    		elementUtil.clickWhenReady(EmployeesConfSubmenu, 10);
+					    		elementUtil.waitforelement();
 						} catch (Exception e2) {
 							// TODO: handle exception
-							System.out.println((EmployeesMainmenu+" "+"Sub menu is not displayed"));
+							System.out.println((EmployeesConfSubmenu+" "+"Sub menu is not displayed"));
 						}					    	
 					    }
 		  
@@ -407,6 +411,7 @@ public class EmployeesmodulescreensPages {
 		
 	public void verifyEmployeeTypeChildmenuRead(String admmn,String admmnread)   {
 		SoftAssert softAssert1 = new SoftAssert();
+		elementUtil.waitforelement();
 		  if(admmnread.equalsIgnoreCase("Yes")) {  	
 			  try {
 				  elementUtil.waitForElementToBeVisibleAssert(EmployeeTypeChildmenu, 10);
@@ -415,14 +420,14 @@ public class EmployeesmodulescreensPages {
 				 Assert.assertEquals(title, admmn);
 				 elementUtil.clickWhenReady(EmployeeTypeChildmenu, 10);	
 				}
-			  	 catch (NoSuchElementException e) {	
+			  	 catch (NoSuchElementException|TimeoutException e) {	
 			  		try {
 			  			elementUtil.mouseaction(Scrollbarelement);
 			  			String title =elementUtil.doGetText(EmployeeTypeChildmenu); 
 						 System.out.println("title is : " + title);
 						 Assert.assertEquals(title, admmn);
 						 elementUtil.clickWhenReady(EmployeeTypeChildmenu, 10);
-					} catch (NoSuchElementException e2) {
+					} catch (NoSuchElementException|TimeoutException e2) {
 						// TODO: handle exception
 						Assert.fail(EmployeeTypeChildmenu+" "+"Sub Menu Should be display,but not displayed");
 					}
@@ -432,20 +437,20 @@ public class EmployeesmodulescreensPages {
 		  }else {
 			  try {
 				 
-				  softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(EmployeeTypeChildmenu, 20),EmployeeTypeChildmenu+" "+"Sub Menu is displayed,Should not be displayed");
+				  	 softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(EmployeeTypeChildmenu,10), "The Employee Type Child Menu Should not be displayed,but displayed");
 					 elementUtil.clickWhenReady(EmployeeTypeChildmenu, 10);
-					 softAssert1.assertAll();
+					 
 					    } catch (org.openqa.selenium.NoSuchElementException e) {
 					    	try {
 					    		elementUtil.mouseaction(Scrollbarelement);
-					    		softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(EmployeeTypeChildmenu, 20),EmployeeTypeChildmenu+" "+"Sub Menu is displayed,Should not be displayed");
-								 elementUtil.clickWhenReady(EmployeeTypeChildmenu, 10);
+								softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(EmployeeTypeChildmenu,10), "The Employee Type Child Menu Should not be displayed,but displayed");
+								elementUtil.clickWhenReady(EmployeeTypeChildmenu, 10);
 						} catch (Exception e2) {
 							// TODO: handle exception
 							System.out.println((EmployeeTypeChildmenu+" "+"Sub menu is not displayed"));
 						}					    	
 					    }
-		  
+			  softAssert1.assertAll();
 		  }
 		  }
 	
@@ -456,12 +461,12 @@ public class EmployeesmodulescreensPages {
 				Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(EmployeeTypeChildmenulistpagetitle, 10),"The List Page title was not displayed");
 //				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(getlistpagetitle, 10),getlistpagetitle + " Sub menu Should be displayed, but was not displayed");
 					Assert.assertEquals(elementUtil.doGetText(EmployeeTypeChildmenulistpagetitle), "Employee Type");
-					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord1, 10),"List page record should be displayed,but not displayed");
+					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selecteditpagerecord, 10),"List page record should be displayed,but not displayed");
 					Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button Should be displayed,but not displayed");	
 			       }
 			catch (StaleElementReferenceException e) {
 				try {
-					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord1, 10),"List page record should be displayed,but not displayed");
+					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selecteditpagerecord, 10),"List page record should be displayed,but not displayed");
 					Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button Should be displayed,but not displayed");	
 				} catch (org.openqa.selenium.NoSuchElementException e1) {
 					// TODO: handle exception
@@ -483,26 +488,26 @@ public class EmployeesmodulescreensPages {
 //				softAssert1.assertTrue(elementUtil.verifyelementIsDisplayed(getlistpagetitle, 10),getlistpagetitle + " Sub menu Should be displayed, but was not displayed");
 					Assert.assertEquals(elementUtil.doGetText(EmployeeTypeChildmenulistpagetitle), "Employee Type");
 					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord1, 10),"List page record should be displayed,but not displayed");
-					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button displayed,but Should not be displayed");	
+					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,10),"Create button displayed,but Should not be displayed");	
 				
 			       }
 			catch (StaleElementReferenceException e) {
 				try {
 					softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord1, 10),"List page record should be displayed,but not displayed");
-					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button displayed,Should not be displayed");	
+					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,10),"Create button displayed,Should not be displayed");	
 					
-				} catch (org.openqa.selenium.NoSuchElementException e1) {
+				} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e1) {
 					// TODO: handle exception
 					System.out.println(Createbutton+" "+" was not displayed in the Homeworks Menu");
 				}
 				catch (StaleElementReferenceException e2) {
 					// TODO: handle exception
-					System.out.println("Create button displayed,Should not be displayed");
+					softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(Createbutton,10),"Create button displayed,but Should not be displayed");	
 				}
 				// TODO: handle exception
 				
 			}
-			catch (org.openqa.selenium.NoSuchElementException e) {
+			catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 				// TODO: handle exception
 				System.out.println(Createbutton+" "+" was not displayed in the Homeworks Menu");
 			}
@@ -519,8 +524,8 @@ public class EmployeesmodulescreensPages {
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(EmployeeTypeChildmenulistpagetitle, 3),
 						getlistpagetitle + "List Page title Should be displayed, but was not displayed");
 				String t3=elementUtil.doGetText(selecteditpagerecord1);
-				elementUtil.visibilityOfAllElements(visiblityofallrecords1, 30);
-				elementUtil.clickWhenReady(selectrecord1, 3);
+				elementUtil.visibilityOfAllElements(selecteditpagerecord1, 10);
+				elementUtil.clickWhenReady(selecteditpagerecord1, 3);
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
 				Assert.assertEquals(elementUtil.doGetText(edittitle), t3);
@@ -534,7 +539,7 @@ public class EmployeesmodulescreensPages {
 				try {
 					String t4=elementUtil.doGetText(selecteditpagerecord1);
 					elementUtil.visibilityOfAllElements(visiblityofallrecords1, 30);
-					elementUtil.clickWhenReady(selectrecord1, 3);
+					elementUtil.clickWhenReady(selecteditpagerecord1, 3);
 					softAssert1.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 							edittitle + " Edit Page Title Should be displayed, but was not displayed");
 					Assert.assertEquals(elementUtil.doGetText(edittitle), t4);
@@ -561,7 +566,7 @@ public class EmployeesmodulescreensPages {
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(getlistpagetitle, 3),
 						getlistpagetitle + " List Page title Should be displayed, but was not displayed");
 				String selectrecordtitle=	elementUtil.doGetText(selecteditpagerecord1);
-				elementUtil.clickWhenReady(selectrecord1, 3);
+				elementUtil.clickWhenReady(selecteditpagerecord1, 3);
 				Assert.assertTrue(elementUtil.verifyelementIsDisplayed(edittitle, 10),
 						edittitle + " Edit Page Title Should be displayed, but was not displayed");
 					Assert.assertEquals(elementUtil.doGetText(edittitle), selectrecordtitle);

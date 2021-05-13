@@ -204,5 +204,11 @@ public class SchoolManagementmoduletest extends roleaccessBaseTest {
 		 SchoolManagementmodulepages.verifyOptionalSubjectCreatsubmenuDelete(OSSubMenuDelete, OSSubMenuRead);
 	  
 	  }
+	 
+	 @Test(priority = 35,dataProvider="getdata") 
+	  public void AdmloginSchoolCalenderRverifyTest(String SMMMenu,String SMMRead,String CTASubMenu,String CTASubMenuRead,String CTASubMenuCreate,String CTASubMenuEdit,String CTASubMenuDelete,String AttCalSubMenu,String AttCalSubMenuRead,String AttCalSubMenuCreate,String AttCalSubMenuEdit,String AttCalSubMenuDelete,String GradeCreatSubMenu,String GradeCreatSubMenuRead,String GradeCreatSubMenuCreate,String GradeCreatSubMenuEdit,String GradeCreatSubMenuDelete,String SectCreatSubMenu,String SectCreatSubMenuRead,String SectCreatSubMenuCreate,String SectCreatSubMenuEdit,String SectCreatSubMenuDelete,String HMSubMenu,String HMSubMenuRead,String HMSubMenuCreate,String HMSubMenuEdit,String HMSubMenuDelete,String OSSubMenu,String OSSubMenuRead,String OSSubMenuCreate,String OSSubMenuEdit,String OSSubMenuDelete,String BSSSubMenu,String BSSSubMenuRead,String BSSSubMenuCreate,String BSSSubMenuEdit,String BSSSubMenuDelete,String SCSubMenu,String SCSubMenuRead,String SCSubMenuCreate,String SCSubMenuEdit,String SCSubMenuDelete,String EnvSubMenu,String EnvSubMenuRead,String CEnvSubMenu,String CEnvSubMenuRead,String CEnvSubMenuCreate,String CEnvSubMenuEdit,String CEnvSubMenuDelete) { 
+		 SchoolManagementmodulepages.verifySchoolCalenderSubmenu(SCSubMenu, SCSubMenuRead);
+	  
+	  }
 
 }

@@ -650,10 +650,24 @@ public class StudentlifecyclemodulePages  {
 	public void verifyAdmissionsFollowupChildmenuCreate(String OrgCreate) {
 		
 		  if(OrgCreate.equalsIgnoreCase("Yes")) {
-				createbuttonverifymethod();	
+			  try {
+				  Assert.assertTrue(elementUtil.verifyelementIsDisplayed(AdmissionsFollowupChildmenu,20),AdmissionsFollowupChildmenu+" Child menu Should be displayed, but was not displayed");
+					createbuttonverifymethod();	
+			} catch (NoSuchElementException|TimeoutException e) {
+				// TODO: handle exception
+				Assert.fail(AdmissionsFollowupChildmenu+" Child menu Should be displayed, but was not displayed");
+			}
+			  
 		  }else 
 		  {
-			    createbuttonverifynomethod();
+			  try {
+				  Assert.assertFalse(elementUtil.verifyelementIsDisplayed(AdmissionsFollowupChildmenu, 10),"AdmissionsFollowupChildmenu"+" "+"Sub menu is displayed,Should not be displayed");
+				    createbuttonverifynomethod();
+			} catch (NoSuchElementException|TimeoutException e) {
+				// TODO: handle exception
+				System.out.println(AdmissionsFollowupChildmenu+" Child menu was not displayed");
+			}
+			
 		  }	
 		  }	  
 	public void verifyAdmissionsFollowupChildmenuEdit(String OrgEdit) {
@@ -661,14 +675,18 @@ public class StudentlifecyclemodulePages  {
 		 
 		  if(OrgEdit.equalsIgnoreCase("Yes")) {
 			  elementUtil.clickWhenReady(selectrecord,10);
-			  	Editbuttonverifymethod();	
+			  elementUtil.waitforelement();
+			  elementUtil.waitForTitleContains(5, "Followup");
+			  Editbuttonverifymethod();	
 		  }else 
 		  {	
 			  try {
 				  elementUtil.waitForElementToBeVisible(selectrecord,10);
 				  elementUtil.clickWhenReady(selectrecord,5);
+				  elementUtil.waitforelement();
+				  elementUtil.waitForTitleContains(5, "Followup");
 				  Editbuttonverifynomethod();
-			} catch (NoSuchElementException e) {
+			} catch (NoSuchElementException|TimeoutException e) {
 				// TODO: handle exception
 			}
 			  catch (ElementClickInterceptedException e) {
@@ -684,6 +702,8 @@ public class StudentlifecyclemodulePages  {
 		  if(OrgEdit.equalsIgnoreCase("Yes")) {
 				  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
 				  	elementUtil.clickWhenReady(Actionbutton, 5);
+				  	elementUtil.waitforelement();
+					elementUtil.waitForTitleContains(5, "Followup");
 				  	Deletebuttonverifymethod();
 			  }
 			  else 
@@ -692,6 +712,8 @@ public class StudentlifecyclemodulePages  {
 				  Assert.assertFalse(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should not be displayed,but displayed");
 				  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
 				  elementUtil.clickWhenReady(Actionbutton, 5);
+				  elementUtil.waitforelement();
+				  elementUtil.waitForTitleContains(5, "Followup");
 				  Deletebuttonverifynomethod();
 			} catch (NoSuchElementException e) {
 			}

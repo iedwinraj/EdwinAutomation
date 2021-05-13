@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="PrincipalLogin User Test automtion regression suite"
+<suite name="Principal Login User Test automtion regression suite"
 	thread-count="4" parallel="none" verbose="3">
 
 	<listeners>
@@ -14,7 +14,7 @@
 	</listeners>
 
 	<!-- <test
-		name="PrincipalLogin_Administration Management Module test Test_chrome_64">
+		name="Principal Login_Administration Management Module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
@@ -23,25 +23,25 @@
 		</classes>
 	</test> -->
 
-	<test
-		name="PrincipalLogin_Configurations Management module test Test_chrome_64">
+<!-- 	<test
+		name="Principal Login_Configurations Management module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginConfigurationsManagementmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test
-		name="PrincipalLogin_Administration_School Management Module test Test_chrome_64">
+<!-- 	<test
+		name="Principal Login_Administration_School Management Module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class name="com.qa.verifyroleacess.tests.PrincipalSMMtest" />
 		</classes>
-	</test>
-
+	</test> -->
+<!-- 
 	<test
 		name="PrincipalLogin_Administration_Student Lifecycle Management Module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
@@ -50,9 +50,9 @@
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalSLCManagementtest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test
+	<!-- <test
 		name="PrincipalLogin_OnlineVideos module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
@@ -60,70 +60,70 @@
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginOnlineVideosmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="PrincipalLogin_SendEmail module test Test_chrome_64">
+	<!-- <test name="PrincipalLogin_SendEmail module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginSendEmailmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="PrincipalLogin_StudentManagement module test Test_chrome_64">
+	<!-- <test name="PrincipalLogin_StudentManagement module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginStudentManagementmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="PrincipalLogin_Circular module test Test_chrome_64">
+<!-- 	<test name="PrincipalLogin_Circular module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginCircularmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="PrincipalLogin_Reportcard module test Test_chrome_64">
+	<!-- <test name="PrincipalLogin_Reportcard module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginReportCardmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="PrincipalLogin_FeesManagement module test Test_chrome_64">
+	<!-- <test name="PrincipalLogin_FeesManagement module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginFeesManagementmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="PrincipalLogin_Employees module test Test_chrome_64">
+	<!-- <test name="PrincipalLogin_Employees module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalloginEmployeesmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="PrincipalLogin_Incident module test Test_chrome_64">
+	<!-- <test name="PrincipalLogin_Incident module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.PrincipalIncidentmoduletest" />
 		</classes>
-	</test>
+	</test> -->
 
 	<test name="PrincipalLogin_Stories module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />

@@ -2,6 +2,7 @@ package com.qa.Adminstrationmodule.pages;
 
 
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.fail;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
@@ -77,15 +78,15 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			//	  elementUtil.waitForElementToBeVisible(selectrecord,10);
 				 
 				  if(OrgEdit.equalsIgnoreCase("Yes")) {
-					  elementUtil.clickWhenReady(selectrecord,10);
+					  // elementUtil.clickWhenReady(selectrecord,10);
 					  	Editbuttonverifymethod();	
 				  }else if(OrgEdit.equalsIgnoreCase("No")) 
 				  {	
 					  try {
-						  elementUtil.waitForElementToBeVisible(selectrecord,10);
-						  elementUtil.clickWhenReady(selectrecord,5);
+						  // elementUtil.waitForElementToBeVisible(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  Editbuttonverifynomethod();
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					  catch (ElementClickInterceptedException e) {
@@ -99,136 +100,144 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
 				  
 				  if(OrgDelete.equalsIgnoreCase("Yes")) {
-						  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-						  	elementUtil.clickWhenReady(Actionbutton, 5);
+	//					  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
+	//					  	elementUtil.clickWhenReady(Actionbutton, 5);
 						  	Deletebuttonverifymethod();
 					  }
 					  else 
 				  {
 					  try {
-						  Assert.assertFalse(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should not be displayed,but displayed");
-						  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-						  elementUtil.clickWhenReady(Actionbutton, 5);
+	//					  Assert.assertFalse(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should not be displayed,but displayed");
+	//					  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+	//					  elementUtil.clickWhenReady(Actionbutton, 5);
 						  Deletebuttonverifynomethod();
-					}catch (NoSuchElementException e) {
+					}catch (NoSuchElementException|TimeoutException e) {
 					}
-					  catch (TimeoutException e) {
-						}
-					  
-				  }	
-				  }	
-			
-			
-			
-			public void  createbuttonverifymethod() {
-				try {
-				t2=	elementUtil.doGetText(Menutitle);	
-				softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10),"List page record should be displayed,but not displayed");
-				softAssert1.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Createbutton,20),"Create button Should be displayed,but not displayed");
-		   //	elementUtil.waitForElementToBeVisibleAssert(Createbutton, 20);
-				System.out.println("Create button displayed Successfully");
-		   //	elementUtil.clickWhenReady(Createbutton, 10);
-				
-				}
-				catch (StaleElementReferenceException e) {
-					// TODO: StaleElfc xxcvcvementhandle exception
-					  System.out.println("Create button displayed Successfully");
-				}
-				softAssert1.assertAll();
-				}
-				public void  createbuttonverifynomethod() {
-				try {
-				//	  Thread.sleep(5000);
-					elementUtil.waitForElementToBeVisibleAssert(selectrecord, 10);	
-//					elementUtil.waitForElementToBeVisible(selectrecord, 10);
 					
-					  assertFalse(elementUtil.doIsDisplayed(Createbutton),"Create button is displayed,Should not be displayed");
-				}  //catch (InterruptedException e) {
-				//TODO Auto-generated catch block
-				//e.printStackTrace();
-				//}
-				catch (NoSuchElementException e) {
+				  }	
+			}
+			
+			
+			public void createbuttonverifymethod() {
+				try {
+					// elementUtil.waitForElementToBeVisible(Createbutton, 20);
+					elementUtil.waitForElementToBeVisible(selectrecord, 10);
+					Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Createbutton, 5), " Create button displayed");
+					// assertTrue(elementUtil.doIsDisplayed(Createbutton), "The Create button
+					// displayed Successfully");
+					System.out.println("Create button Clicked Successfully");
+					// elementUtil.clickWhenReady(Createbutton, 10);
+				} catch (StaleElementReferenceException e) {
+					// TODO: StaleElementhandle exception
+					System.out.println("Create button Clicked Successfully");
+				} catch (org.openqa.selenium.NoSuchElementException | TimeoutException e) {
+					Assert.fail("Create button is not displayed,it should be displayed");
+				}
+
+			}
+
+			public void createbuttonverifynomethod() {
+				SoftAssert assert1= new SoftAssert();
+				try {
+					// Thread.sleep(5000);
+					elementUtil.waitForElementToBeVisible(selectrecord, 10);
+					assert1.assertFalse(elementUtil.doIsDisplayed(Createbutton), "Create button is displayed,Should not be displayed");
+				} catch (StaleElementReferenceException e) {
+					try {
+					assert1.assertFalse(elementUtil.doIsDisplayed(Createbutton), "Create button is displayed,Should not be displayed");
+				} catch (org.openqa.selenium.NoSuchElementException | TimeoutException e2) {
 					// TODO: handle exception
-					System.out.println("Create button is not displayed"); 
+					System.out.println("Create button was not displayed");
 				}
-				catch(StaleElementReferenceException e) {
-					try {
-					  assertFalse(elementUtil.doIsDisplayed(Createbutton),"Create button is displayed,Should not be displayed");
-					}
-					catch(NoSuchElementException e1) {
-						System.out.println("Create button is not displayed"); 
-					  } 
-				catch(ElementClickInterceptedException e2) {
-					  assertFalse(elementUtil.doIsDisplayed(Createbutton),"Create button is displayed,Should not be displayed");
-					  }
-				}
-				
-				}
-				
-				public void  Editbuttonverifymethod() {
-					try {
-	//				Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(edittitle, 10));
-					if(elementUtil.doGetText(edittitle).equalsIgnoreCase(t2))
-					Assert.assertTrue(elementUtil.waitForElementToBeVisibleAssert(Editbutton, 10));
-			//		Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Editbutton,20)," Create button displayed");
-				//	assertTrue(elementUtil.doIsDisplayed(Createbutton), "The Create button displayed Successfully");
-				//	elementUtil.clickWhenReady(Editbutton, 10);
-					}
-					catch (ElementClickInterceptedException e) {
-						// TODO: StaleElementhandle exception
-						elementUtil.waitForElementToBeVisibleAssert(Editbutton, 10);
-						  System.out.println("Edit button Clicked Successfully");
-					}
 					
-					}
-					public void  Editbuttonverifynomethod() {
-					try {
-					//	  Thread.sleep(5000);
-						  assertFalse(elementUtil.doIsDisplayed(Editbutton),"Edit button is displayed,Should not be displayed");
-					} catch(org.openqa.selenium.NoSuchElementException e) {
-					System.out.println("Edit button is not displayed"); 
-					} //catch (InterruptedException e) {
-					//TODO Auto-generated catch block
-					//e.printStackTrace();
-					//}
-					catch(StaleElementReferenceException e) {
-						  assertFalse(elementUtil.doIsDisplayed(Editbutton),"Edit button is displayed,Should not be displayed");
-						  } 
-					}
+				} catch (org.openqa.selenium.NoSuchElementException | TimeoutException e) {
+					System.out.println("Create button was not displayed");
+				} // catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					// e.printStackTrace();
+					// }
+				assert1.assertAll();
+			}
+
+			public void Editbuttonverifymethod() {
+				try {
+					SoftAssert assert1 = new SoftAssert();
+					elementUtil.clickWhenReady(selectrecord, 10);
+					elementUtil.waitForElementToBeLocated(Editbutton, 20);
+					Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Editbutton, 20), " Create button displayed");
+					// assertTrue(elementUtil.doIsDisplayed(Createbutton), "The Create button
+					// displayed Successfully");
+					// elementUtil.clickWhenReady(Editbutton, 10);
+					assert1.assertAll();
+				} catch (StaleElementReferenceException e) {
+					SoftAssert assert1 = new SoftAssert();
+					// TODO: StaleElementhandle exception
+					elementUtil.waitForElementToBeLocated(Editbutton, 20);
+					Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Editbutton, 20), " Create button displayed");
+					assert1.assertAll();
+				} catch (org.openqa.selenium.NoSuchElementException | TimeoutException e) {
+					Assert.fail("Edit button is not displayed,Should be displayed");
+				}
 				
-				public void  Deletebuttonverifymethod() {
-					try {
-			//		elementUtil.waitForElementToBeLocated(Deletebutton, 5);  
+			}
+
+			public void Editbuttonverifynomethod() {
+				SoftAssert assert1 = new SoftAssert();
+				try {
+					// Thread.sleep(5000);
+					elementUtil.clickWhenReady(selectrecord, 10);
+					elementUtil.waitForElementToBeLocated(Editbutton, 20);
+					assert1.assertFalse(elementUtil.doIsDisplayed(Editbutton), "Edit button is displayed,Should not be displayed");
+				} // catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					// e.printStackTrace();
+					// }
+				catch (StaleElementReferenceException e) {
+					assert1.assertFalse(elementUtil.doIsDisplayed(Editbutton), "Edit button is displayed,Should not be displayed");
+				}
+
+				catch (org.openqa.selenium.NoSuchElementException | TimeoutException e) {
+					System.out.println("Edit button was not displayed");
+				}
+				assert1.assertAll();
+			}
+
+			public void Deletebuttonverifymethod() {
+				SoftAssert assert1 = new SoftAssert();
+				try {
+					// elementUtil.waitForElementToBeLocated(Deletebutton, 5);
 					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-					elementUtil.clickWhenReady(Actionbutton, 5);	
-					Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Deletebutton,5)," Delete button displayed");
-					//assertTrue(elementUtil.doIsDisplayed(Createbutton), "The Create button displayed Successfully");
-					}
-					catch (StaleElementReferenceException e) {
-						// TODO: StaleElementhandle exception
-						  System.out.println("Delete button Clicked Successfully");
-					}
-					catch (NoSuchElementException e) {
-						// TODO: StaleElementhandle exception
-						Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-						Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Deletebutton,5)," Delete button displayed");
-					}
-					
-					}
-					public void  Deletebuttonverifynomethod() {
-					try {
-					//	  Thread.sleep(5000);
-						  assertFalse(elementUtil.doIsDisplayed(Deletebutton),"Delete button is displayed,Should not be displayed");
-					} catch(org.openqa.selenium.NoSuchElementException e) {
-					System.out.println("Delete button is not displayed"); 
-					} //catch (InterruptedException e) {
-					//TODO Auto-generated catch block
-					//e.printStackTrace();
-					//}
-					catch(StaleElementReferenceException e) {
-						  assertFalse(elementUtil.doIsDisplayed(Deletebutton),"Delete button is displayed,Should not be displayed");
-						  } 
-					}
+					elementUtil.clickWhenReady(Actionbutton, 5);
+					Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Deletebutton, 5), " Delete button displayed");
+					// assertTrue(elementUtil.doIsDisplayed(Createbutton), "The Create button
+					// displayed Successfully");
+				} catch (StaleElementReferenceException e) {
+					// TODO: StaleElementhandle exception
+					Assert.assertTrue(elementUtil.verifyelementIsDisplayed(Deletebutton, 5), " Delete button displayed");
+				} catch (org.openqa.selenium.NoSuchElementException | TimeoutException e) {
+					Assert.fail("Delete button is not displayed");
+				}
+				assert1.assertAll();
+			}
+
+			public void Deletebuttonverifynomethod() {
+				SoftAssert assert1= new SoftAssert();
+				try {
+					// Thread.sleep(5000);
+					elementUtil.doIsDisplayed(Actionbutton);
+					elementUtil.clickWhenReady(Actionbutton, 5);
+					assert1.assertFalse(elementUtil.doIsDisplayed(Deletebutton), "Delete button is displayed,Should not be displayed");
+				} // catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					// e.printStackTrace();
+					// }
+				catch (StaleElementReferenceException e) {
+					assert1.assertFalse(elementUtil.doIsDisplayed(Deletebutton), "Delete button is displayed,Should not be displayed");
+				} catch (org.openqa.selenium.NoSuchElementException | TimeoutException e) {
+					System.out.println("Delete button is not displayed");
+				}
+				assert1.assertAll();
+			}
 
 			public void verifySMMMainmenu(String admmn,String admmnread) {
 				  if(admmnread.equalsIgnoreCase("Yes")) {  	 
@@ -243,7 +252,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						  softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(SchoolManagementMainmenu, 20),SchoolManagementMainmenu+" "+"Main Menu is displayed,Should not be displayed");
 							 elementUtil.clickWhenReady(SchoolManagementMainmenu, 10);
 							 softAssert1.assertAll();
-							    } catch (org.openqa.selenium.NoSuchElementException e) {
+							    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 							    	System.out.println((SchoolManagementMainmenu+" "+"Main menu is not displayed"));
 							    }
 				  
@@ -263,7 +272,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						//	assertFalse(elementUtil.doIsDisplayed(ParentProfileSubmenu),Org+" Sub menu is displayed,Should not be displayed");
 						    elementUtil.clickWhenReady(ClassTeacherAllocationSubmenu, 10);
 						    softAssert1.assertAll();
-							    } catch (org.openqa.selenium.NoSuchElementException e) {
+							    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 							    	System.out.println(Org+" Sub menu is not displayed" );
 							    }
 				  
@@ -282,15 +291,15 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			//	  elementUtil.waitForElementToBeVisible(selectrecord,10);
 				 
 				  if(OrgEdit.equalsIgnoreCase("Yes")) {
-					  elementUtil.clickWhenReady(selectrecord,10);
+					  // elementUtil.clickWhenReady(selectrecord,10);
 					  	Editbuttonverifymethod();	
 				  }else 
 				  {	
 					  try {
-						  elementUtil.waitForElementToBeVisible(selectrecord,10);
-						  elementUtil.clickWhenReady(selectrecord,5);
+						  // elementUtil.waitForElementToBeVisible(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  Editbuttonverifynomethod();
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					  catch (ElementClickInterceptedException e) {
@@ -303,17 +312,24 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			public void verifyCTAsubmenuDelete(String OrgEdit) {
 			//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
 				  
-				  if(OrgEdit.equalsIgnoreCase("Yes")) {
-						  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-						  	elementUtil.clickWhenReady(Actionbutton, 5);
-						  	Deletebuttonverifymethod();
+				  if(OrgEdit.equalsIgnoreCase("Yes")) {try {
+					  elementUtil.waitForTitleContains(5, "Calender");
+					  	Deletebuttonverifymethod();
+				} catch (NoSuchElementException|TimeoutException e) {
+					Assert.fail("Delete button Should be displayed,but was not displayed");
+					// TODO: handle exception
+				}
+//						  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
+//					  	elementUtil.clickWhenReady(Actionbutton, 5);
+					  		
 					  }
 					  else 
 				  {
 					  try {
-						  Assert.assertFalse(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should not be displayed,but displayed");
-						  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-						  elementUtil.clickWhenReady(Actionbutton, 5);
+//						  Assert.assertFalse(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should not be displayed,but displayed");
+//						  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//						  elementUtil.clickWhenReady(Actionbutton, 5);
+						  elementUtil.waitForTitleContains(5, "Calender");
 						  Deletebuttonverifynomethod();
 					} catch (NoSuchElementException e) {
 					}
@@ -336,7 +352,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						//	assertFalse(elementUtil.doIsDisplayed(ParentProfileSubmenu),Org+" Sub menu is displayed,Should not be displayed");
 						    elementUtil.clickWhenReady(AttendanceCalendarSubmenu, 10);
 						    softAssert1.assertAll();
-							    } catch (org.openqa.selenium.NoSuchElementException e) {
+							    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 							    	System.out.println(AttendanceCalendarSubmenu+" Sub menu is not displayed" );
 							    }
 				  
@@ -356,15 +372,15 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			//	  elementUtil.waitForElementToBeVisible(selectrecord,10);
 				 
 				  if(OrgEdit.equalsIgnoreCase("Yes")) {
-					  elementUtil.clickWhenReady(selectrecord,10);
+					  // elementUtil.clickWhenReady(selectrecord,10);
 					  	Editbuttonverifymethod();	
 				  }else 
 				  {	
 					  try {
-						  elementUtil.waitForElementToBeVisible(selectrecord,10);
-						  elementUtil.clickWhenReady(selectrecord,5);
+						  // elementUtil.waitForElementToBeVisible(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  Editbuttonverifynomethod();
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					  catch (ElementClickInterceptedException e) {
@@ -378,17 +394,17 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			//	  elementUtil.waitForElementToBeVisible(Actionbutton, 20);
 				  
 				  if(OrgDelete.equalsIgnoreCase("Yes")) {
-						  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-						  	elementUtil.clickWhenReady(Actionbutton, 5);
+//						  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
+//						  	elementUtil.clickWhenReady(Actionbutton, 5);
 						  	Deletebuttonverifymethod();
 					  }
 					  else 
 				  {
 					  try {
-						  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-						  elementUtil.clickWhenReady(Actionbutton, 5);
+//						  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//						  elementUtil.clickWhenReady(Actionbutton, 5);
 						  Deletebuttonverifynomethod();
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					  
@@ -410,7 +426,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						//	assertFalse(elementUtil.doIsDisplayed(ParentProfileSubmenu),Org+" Sub menu is displayed,Should not be displayed");
 						    elementUtil.clickWhenReady(GradeCreationSubmenu, 10);
 						    softAssert1.assertAll();
-							    } catch (org.openqa.selenium.NoSuchElementException e) {
+							    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 							    	System.out.println(GradeCreationSubmenu+" Sub menu is not displayed" );
 							    }
 				  
@@ -425,18 +441,18 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 				  }	
 			}
 			public void verifyGradeCreatsubmenuEdit(String OrgEdit) {
-//				  elementUtil.waitForElementToBeVisible(selectrecord,10);
+//				  // elementUtil.waitForElementToBeVisible(selectrecord,10);
 				 
 				  if(OrgEdit.equalsIgnoreCase("Yes")) {
-					  elementUtil.clickWhenReady(selectrecord,10);
+					  // elementUtil.clickWhenReady(selectrecord,10);
 					  	Editbuttonverifymethod();	
 				  }else 
 				  {	
 					  try {
-						  elementUtil.waitForElementToBeVisible(selectrecord,10);
-						  elementUtil.clickWhenReady(selectrecord,5);
+						  // elementUtil.waitForElementToBeVisible(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  Editbuttonverifynomethod();
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					  catch (ElementClickInterceptedException e) {
@@ -448,8 +464,8 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			}
 			public void verifyGradeCreatsubmenuDelete(String OrgDelete,String OrgRead) {
 				  if(OrgDelete.equalsIgnoreCase("Yes")) {
-					  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-					  	elementUtil.clickWhenReady(Actionbutton, 5);
+	//				  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
+	//				  	elementUtil.clickWhenReady(Actionbutton, 5);
 					  	Deletebuttonverifymethod();
 				  }
 				  else 
@@ -458,11 +474,11 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 					  String title2 = elementUtil.doGetText(OptionalSubjectSubmenu);
 						System.out.println("title is : " + title2);
 						if(title2.equalsIgnoreCase(OrgRead)) {
-					  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-					  elementUtil.clickWhenReady(Actionbutton, 5);
+//					  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//					  elementUtil.clickWhenReady(Actionbutton, 5);
 					  Deletebuttonverifynomethod();
 						}
-				} catch (NoSuchElementException e) {
+				} catch (NoSuchElementException|TimeoutException e) {
 					// TODO: handle exception
 				}
 				  
@@ -484,7 +500,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						//	assertFalse(elementUtil.doIsDisplayed(ParentProfileSubmenu),Org+" Sub menu is displayed,Should not be displayed");
 						    elementUtil.clickWhenReady(SectionCreationSubmenu, 10);
 						    softAssert1.assertAll();
-							    } catch (org.openqa.selenium.NoSuchElementException e) {
+							    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 							    	System.out.println(SectionCreationSubmenu+" Sub menu is not displayed" );
 							    }
 				  
@@ -499,18 +515,18 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 				  }	 
 			}
 			public void verifySectCreatsubmenuEdit(String OrgEdit) {
-//				  elementUtil.waitForElementToBeVisible(selectrecord,10);
+//				  // elementUtil.waitForElementToBeVisible(selectrecord,10);
 				 
 				  if(OrgEdit.equalsIgnoreCase("Yes")) {
-					  elementUtil.clickWhenReady(selectrecord,10);
+					  // elementUtil.clickWhenReady(selectrecord,10);
 					  	Editbuttonverifymethod();	
 				  }else 
 				  {	
 					  try {
-						  elementUtil.waitForElementToBeVisible(selectrecord,10);
-						  elementUtil.clickWhenReady(selectrecord,5);
+						  // elementUtil.waitForElementToBeVisible(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  Editbuttonverifynomethod();
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					  catch (ElementClickInterceptedException e) {
@@ -521,8 +537,8 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			}
 			public void verifySectCreatsubmenuDelete(String OrgDelete,String OrgRead) {
 				if(OrgDelete.equalsIgnoreCase("Yes")) {
-				  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-				  	elementUtil.clickWhenReady(Actionbutton, 5);
+//				  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
+//				  	elementUtil.clickWhenReady(Actionbutton, 5);
 				  	Deletebuttonverifymethod();
 			  }
 			  else 
@@ -531,11 +547,11 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 				  String title2 = elementUtil.doGetText(OptionalSubjectSubmenu);
 					System.out.println("title is : " + title2);
 					if(title2.equalsIgnoreCase(OrgRead)) {
-				  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-				  elementUtil.clickWhenReady(Actionbutton, 5);
+//				  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//				  elementUtil.clickWhenReady(Actionbutton, 5);
 				  Deletebuttonverifynomethod();
 					}
-			} catch (NoSuchElementException e) {
+			} catch (NoSuchElementException|TimeoutException e) {
 				// TODO: handle exception
 			}
 			  
@@ -559,7 +575,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						//	assertFalse(elementUtil.doIsDisplayed(ParentProfileSubmenu),Org+" Sub menu is displayed,Should not be displayed");
 						    elementUtil.clickWhenReady(HouseManagementSubmenu, 10);
 						    softAssert1.assertAll();
-							    } catch (org.openqa.selenium.NoSuchElementException e) {
+							    } catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 							    	System.out.println(HouseManagementSubmenu+" Sub menu is not displayed" );
 							    }
 				  
@@ -577,28 +593,28 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 //				  elementUtil.waitForElementToBeVisible(selectrecord,10);
 				  if(OrgEdit.equalsIgnoreCase("Yes")) {
 					  try {
-						  elementUtil.clickWhenReady(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  	Editbuttonverifymethod();	
 					} catch (StaleElementReferenceException e) {
-						elementUtil.clickWhenReady(selectrecord,10);
+						// elementUtil.clickWhenReady(selectrecord,10);
 					  	Editbuttonverifymethod();	
 					}
 					  
 				  }else 
 				  {	
 					  try {
-						  elementUtil.waitForElementToBeVisible(selectrecord,10);
-						  elementUtil.clickWhenReady(selectrecord,5);
+						  // elementUtil.waitForElementToBeVisible(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  Editbuttonverifynomethod();
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					  catch (ElementClickInterceptedException e) {
 							// TODO: handle exception
 						}	
 					  catch (StaleElementReferenceException e) {
-						  elementUtil.waitForElementToBeVisible(selectrecord,10);
-						  elementUtil.clickWhenReady(selectrecord,5);
+						  // elementUtil.waitForElementToBeVisible(selectrecord,10);
+						  // elementUtil.clickWhenReady(selectrecord,10);
 						  Editbuttonverifynomethod();
 							// TODO: handle exception
 						}
@@ -607,17 +623,25 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 			}
 			public void verifyHMsubmenuDelete(String OrgDelete) {
 				if(OrgDelete.equalsIgnoreCase("Yes")) {
-				  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
-				  	elementUtil.clickWhenReady(Actionbutton, 5);
-				  	Deletebuttonverifymethod();
+					try {
+						elementUtil.waitForTitleContains(5, "House Management");
+						Deletebuttonverifymethod();
+					} catch (NoSuchElementException|TimeoutException e) {
+						// TODO: handle exception
+						Assert.fail("Delete button Should be displayed,but was not displayed");
+					}
+//				  	Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton), "The Action button Should be displayed,but not displayed");
+//				  	elementUtil.clickWhenReady(Actionbutton, 5);
+				  	
 			  }
 			  else 
 		  {
 			  try {
-				  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-				  elementUtil.clickWhenReady(Actionbutton, 5);
+//				  elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//				  elementUtil.clickWhenReady(Actionbutton, 5);
+				  elementUtil.waitForTitleContains(5, "House Management");
 				  Deletebuttonverifynomethod();
-			} catch (NoSuchElementException e) {
+			} catch (NoSuchElementException|TimeoutException e) {
 				// TODO: handle exception
 			}
 			  
@@ -640,7 +664,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 								EnvironmentSubmenu + " " + "Main Menu is displayed,Should not be displayed");
 						elementUtil.clickWhenReady(EnvironmentSubmenu, 10);
 						softAssert1.assertAll();
-					} catch (org.openqa.selenium.NoSuchElementException e) {
+					} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 						System.out.println((EnvironmentSubmenu + " " + "Main menu is not displayed"));
 					}
 
@@ -669,7 +693,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						// displayed,Should not be displayed");
 						elementUtil.clickWhenReady(CreateEnvironmentChildmenu, 10);
 						softAssert1.assertAll();
-					} catch (org.openqa.selenium.NoSuchElementException e) {
+					} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 						System.out.println(CreateEnvironmentChildmenu + " Sub menu is not displayed");
 					}
 
@@ -688,50 +712,55 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 //						  elementUtil.waitForElementToBeVisible(selectrecord,10);
 				if (OrgEdit.equalsIgnoreCase("Yes")) {
 					try {
-						elementUtil.clickWhenReady(selectrecord, 10);
-						if(elementUtil.doGetText(edittitle).equalsIgnoreCase(titlemenu))
+						// elementUtil.clickWhenReady(selectrecord,10);
+//						if(elementUtil.doGetText(edittitle).equalsIgnoreCase(titlemenu))
+						elementUtil.waitForTitleContains(5, "House Management");
 						Editbuttonverifymethod();
 					} catch (StaleElementReferenceException e) {
-						elementUtil.clickWhenReady(selectrecord, 10);
+						// elementUtil.clickWhenReady(selectrecord,10);
 						Editbuttonverifymethod();
+					}
+					catch (NoSuchElementException|TimeoutException e) {
+						// TODO: handle exception
+						Assert.fail("The Edit button Should be displayed,but not displayed");
 					}
 
 				} else {
 					try {
-						elementUtil.waitForElementToBeVisible(selectrecord, 10);
-						elementUtil.clickWhenReady(selectrecord, 5);
+						// elementUtil.waitForElementToBeVisible(selectrecord, 10);
+						// elementUtil.clickWhenReady(selectrecord,10);
 						Editbuttonverifynomethod();
-					} catch (NoSuchElementException e) {
-						// TODO: handle exception
-					} catch (ElementClickInterceptedException e) {
-						// TODO: handle exception
-					} catch (StaleElementReferenceException e) {
-						elementUtil.waitForElementToBeVisible(selectrecord, 10);
-						elementUtil.clickWhenReady(selectrecord, 5);
+					} 	// TODO: handle exception
+				catch (StaleElementReferenceException e) {
+						// elementUtil.waitForElementToBeVisible(selectrecord, 10);
+						// elementUtil.clickWhenReady(selectrecord,10);
 						Editbuttonverifynomethod();
 						// TODO: handle exception
 					}
+					 catch (ElementClickInterceptedException e) {
+					
 				}
-
+					catch (NoSuchElementException|TimeoutException e) {
+						// TODO: handle exception
+					}
+				} 
 			}
 
 			public void verifyCEsubmenuDelete(String OrgDelete) {
 				if (OrgDelete.equalsIgnoreCase("Yes")) {
-					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),
-							"The Action button Should be displayed,but not displayed");
-					elementUtil.clickWhenReady(Actionbutton, 5);
+//					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),"The Action button Should be displayed,but not displayed");
+//					elementUtil.clickWhenReady(Actionbutton, 5);
 					Deletebuttonverifymethod();
 				} else {
 					try {
-						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-						elementUtil.clickWhenReady(Actionbutton, 5);
+//						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//						elementUtil.clickWhenReady(Actionbutton, 5);
 						Deletebuttonverifynomethod();
 					} catch (NoSuchElementException e) {
 						// TODO: handle exception
 					}
 					 catch (TimeoutException e) {
 							// TODO: handle exception
-						 Deletebuttonverifynomethod();
 						}
 
 				}
@@ -757,7 +786,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 								BusinessStageSetupSubmenu + " " + "Sub menu is displayed,Should not be displayed");
 						elementUtil.clickWhenReady(BusinessStageSetupSubmenu, 10);
 						softAssert1.assertAll();
-					} catch (org.openqa.selenium.NoSuchElementException e) {
+					} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 						System.out.println(BusinessStageSetupSubmenu + " Sub menu is not displayed");
 					}
 
@@ -777,7 +806,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						Assert.assertTrue((!title3.equalsIgnoreCase(OrgRead)), OptionalSubjectSubmenu+" "+"Menu was not displayed");
 					}
 				}
-					 catch (NoSuchElementException e) {
+					 catch (NoSuchElementException|TimeoutException e) {
 					// TODO: handle exception
 				}
 					
@@ -788,7 +817,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 
 			public void verifyBSSetupCreatsubmenuEdit(String OrgEdit,String OrgRead) {
 				if (OrgEdit.equalsIgnoreCase("Yes")) {
-					elementUtil.clickWhenReady(selectrecord, 10);
+					// elementUtil.clickWhenReady(selectrecord,10);
 					Editbuttonverifymethod();
 				} else {
 					try {
@@ -796,13 +825,13 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						System.out.println("title is : " + title2);
 						S1 = elementUtil.doGetText(BusinessStageSetupSubmenu);
 						if(title2.equalsIgnoreCase(OrgRead)) {
-						elementUtil.waitForElementToBeVisible(selectrecord, 10);
-						elementUtil.clickWhenReady(selectrecord, 5);
+						// elementUtil.waitForElementToBeVisible(selectrecord, 10);
+						// elementUtil.clickWhenReady(selectrecord,10);
 						Editbuttonverifynomethod();
 						}else {
 							Editbuttonverifynomethod();
 						}
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					} catch (ElementClickInterceptedException e) {
 						// TODO: handle exception
@@ -814,9 +843,8 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 
 			public void verifyBSSetupCreatsubmenuDelete(String OrgDelete,String OrgRead) {
 				if (OrgDelete.equalsIgnoreCase("Yes")) {
-					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),
-							"The Action button Should be displayed,but not displayed");
-					elementUtil.clickWhenReady(Actionbutton, 5);
+//					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),"The Action button Should be displayed,but not displayed");
+//					elementUtil.clickWhenReady(Actionbutton, 5);
 					Deletebuttonverifymethod();
 				} else {
 					try {
@@ -824,14 +852,14 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						System.out.println("title is : " + title2);
 						S1 = elementUtil.doGetText(BusinessStageSetupSubmenu);
 						if(title2.equalsIgnoreCase(OrgRead)) {
-						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-						elementUtil.clickWhenReady(Actionbutton, 5);
+//						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//						elementUtil.clickWhenReady(Actionbutton, 5);
 						Deletebuttonverifynomethod();
 						}
 						else {
 							Assert.assertEquals(title2, OrgRead);
 						}
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 
@@ -858,7 +886,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 								OptionalSubjectSubmenu + " " + "Sub menu is displayed,Should not be displayed");
 						elementUtil.clickWhenReady(OptionalSubjectSubmenu, 10);
 						softAssert1.assertAll();
-					} catch (org.openqa.selenium.NoSuchElementException e) {
+					} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 						System.out.println(OptionalSubjectSubmenu + " Sub menu is not displayed");
 					}
 
@@ -877,7 +905,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 								Assert.assertTrue(!elementUtil.waitForElementToBeVisible(getlistpagetitle, 5).getText().equalsIgnoreCase(elementUtil.waitForElementToBeVisible(OptionalSubjecttitle, 5).getText()), OptionalSubjectSubmenu+" "+"Menu was not displayed");
 							}
 						
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					
@@ -889,7 +917,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 					String title2 = elementUtil.doGetText(OptionalSubjectSubmenu);
 					System.out.println("title is : " + title2);
 					if(title2.equalsIgnoreCase(OrgRead)) {
-					elementUtil.clickWhenReady(selectrecord, 10);
+					// elementUtil.clickWhenReady(selectrecord,10);
 					Editbuttonverifymethod();
 					}else {
 						Assert.fail("Editbutton was not displayed");
@@ -899,13 +927,13 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						String title2 = elementUtil.doGetText(OptionalSubjectSubmenu);
 						System.out.println("title is : " + title2);
 						if(title2.equalsIgnoreCase(OrgRead)) {
-						elementUtil.waitForElementToBeVisible(selectrecord, 10);
-						elementUtil.clickWhenReady(selectrecord, 5);
+						// elementUtil.waitForElementToBeVisible(selectrecord, 10);
+						// elementUtil.clickWhenReady(selectrecord,10);
 						Editbuttonverifynomethod();
 						}else {
 							Editbuttonverifynomethod();
 						}
-						} catch (NoSuchElementException e) {
+						} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					} catch (ElementClickInterceptedException e) {
 						// TODO: handle exception
@@ -917,20 +945,19 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 
 			public void verifyOptionalSubjectCreatsubmenuDelete(String OrgDelete,String OrgRead) {
 				if (OrgDelete.equalsIgnoreCase("Yes")) {
-					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),
-							"The Action button Should be displayed,but not displayed");
-					elementUtil.clickWhenReady(Actionbutton, 5);
+//					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),"The Action button Should be displayed,but not displayed");
+//					elementUtil.clickWhenReady(Actionbutton, 5);
 					Deletebuttonverifymethod();
 				} else {
 					try {
 						String title2 = elementUtil.doGetText(OptionalSubjectSubmenu);
 						System.out.println("title is : " + title2);
 						if(title2.equalsIgnoreCase(OrgRead)) {
-						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-						elementUtil.clickWhenReady(Actionbutton, 5);
+//						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//						elementUtil.clickWhenReady(Actionbutton, 5);
 						Deletebuttonverifynomethod();
 						}
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 
@@ -970,7 +997,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 								SchoolCalendarSubmenu + " " + "Sub menu is displayed,Should not be displayed");
 						elementUtil.clickWhenReady(SchoolCalendarSubmenu, 10);
 						softAssert1.assertAll();
-					} catch (org.openqa.selenium.NoSuchElementException e) {
+					} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
 						System.out.println(SchoolCalendarSubmenu + " Sub menu is not displayed");
 					}
 
@@ -987,7 +1014,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(SCEditrecord, 10));
 						elementUtil.clickWhenReady(SCEditrecord, 10);
 						
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 					 catch (StaleElementReferenceException e) {
@@ -1017,7 +1044,7 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 						}else {
 							Editbuttonverifynomethod();
 						}
-						} catch (NoSuchElementException e) {
+						} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					} catch (ElementClickInterceptedException e) {
 						// TODO: handle exception
@@ -1029,25 +1056,46 @@ import com.qa.verifyroleacess.utils.ElementUtils;
 
 			public void verifySCsubmenuDelete(String OrgDelete,String OrgRead) {
 				if (OrgDelete.equalsIgnoreCase("Yes")) {
-					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),
-							"The Action button Should be displayed,but not displayed");
-					elementUtil.clickWhenReady(Actionbutton, 5);
+//					Assert.assertTrue(elementUtil.doIsDisplayed(Actionbutton),"The Action button Should be displayed,but not displayed");
+//					elementUtil.clickWhenReady(Actionbutton, 5);
 					Deletebuttonverifymethod();
 				} else {
 					try {
 						String title2 = elementUtil.doGetText(SchoolCalenderSubmenu);
 						System.out.println("title is : " + title2);
 						if(title2.equalsIgnoreCase(OrgRead)) {
-						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
-						elementUtil.clickWhenReady(Actionbutton, 5);
+//						elementUtil.waitForElementToBeVisible(Actionbutton, 10);
+//						elementUtil.clickWhenReady(Actionbutton, 5);
 						Deletebuttonverifynomethod();
 						}
-					} catch (NoSuchElementException e) {
+					} catch (NoSuchElementException|TimeoutException e) {
 						// TODO: handle exception
 					}
 
 				}
 			}
+			
+			public void verifySchoolCalenderSubmenu(String SCCmenu, String SCCread) {
+				if (SCCread.equalsIgnoreCase("Yes")) {
+					try {
+						elementUtil.waitForElementToBeVisibleAssert(EnvironmentSubmenu, 10);
+					} catch (TimeoutException|NoSuchElementException e) {
+						// TODO: handle exception
+						Assert.fail("School Calender Submenu was not displayed");
+					}
+					
+				} else {
+					try {
+						SoftAssert softAssert1 = new SoftAssert();
+						softAssert1.assertFalse(elementUtil.waitForElementToBeVisibleAssert(EnvironmentSubmenu, 20),
+								EnvironmentSubmenu + " " + "Main Menu is displayed,Should not be displayed");
+						softAssert1.assertAll();
+					} catch (org.openqa.selenium.NoSuchElementException|TimeoutException e) {
+						System.out.println((EnvironmentSubmenu + " " + "Main menu is not displayed"));
+					}
+
+				}
+			}	
 			
 			
 	}	

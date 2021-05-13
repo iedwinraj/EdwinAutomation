@@ -13,7 +13,7 @@
 			class-name="com.qa.opencart.testlisteners.TesultsListener" />
 	</listeners>
 
-
+<!-- 
 	<test
 		name="CAdmin_Administration Management Module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
@@ -22,9 +22,9 @@
 			<class
 				name="com.qa.verifyroleacess.tests.Dashboardpageparameterizedtest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdmin_Circular_module test Test_chrome_64">
+	<!-- <test name="CAdmin_Circular_module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
@@ -32,45 +32,45 @@
 				name="com.qa.verifyroleacess.tests.Circularmodulescreenstest" />
 
 		</classes>
-	</test>
-
-	<test name="CAdminConfigurations Management module test Test_chrome_64">
+	</test> -->
+<!-- 
+	<test name="CAdmin Configurations Management module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.ConfigurationsManagementmodulescreenstest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdminEmployees module test Test_chrome_64">
+<!-- 	<test name="CAdmin Employees module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.Employeesmodulescreenstest" />
 		</classes>
-	</test>
-
-	<test name="CAdminFeesManagement module test Test_chrome_64">
+	</test> -->
+<!-- 
+	<test name="CAdmin FeesManagement module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.FeesManagmentmodulescreenstest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdminIncident module test Test_chrome_64">
+<!-- 	<test name="CAdmin Incident module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.Incidentmodulescreenstest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdminOnlineVideos module test Test_chrome_64">
+	<!-- <test name="CAdmin OnlineVideos module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
@@ -78,9 +78,9 @@
 				name="com.qa.verifyroleacess.tests.OnlineVideosmodulescreenstest" />
 		</classes>
 
-	</test>
+	</test> -->
 
-	<test name="CAdminReport Card module test Test_chrome_64">
+	<!-- <test name="CAdmin Report Card module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
@@ -88,10 +88,10 @@
 				name="com.qa.verifyroleacess.tests.ReportCardmodulescreenstest" />
 		</classes>
 
-	</test>
+	</test> -->
 
-	<test
-		name="CAdminRSchoolManagement module NiyoFinanceHeadSMMtest Test_chrome_64">
+	<!-- <test
+		name="CAdmin SchoolManagement module SMM test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
@@ -99,27 +99,27 @@
 				name="com.qa.verifyroleacess.tests.SchoolManagementmoduletest" />
 
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdminRSendEmail module test Test_chrome_64">
+	<!-- <test name="CAdmin SendEmail module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.SendEmailmodulescreenstest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdminRStories module test Test_chrome_64">
+<!-- 	<test name="CAdmin Stories module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
 			<class
 				name="com.qa.verifyroleacess.tests.Storiesmodulescreenstest" />
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdminRStudent life cycle module Test_chrome_64">
+<!-- 	<test name="CAdmin Student life cycle module Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
@@ -127,9 +127,9 @@
 				name="com.qa.verifyroleacess.tests.Studentlifecyclemoduletest" />
 
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="CAdminRStudentManagement module test Test_chrome_64">
+	<test name="CAdmin StudentManagement module test Test_chrome_64">
 		<parameter name="browser" value="chrome" />
 		<parameter name="version" value="64" />
 		<classes>
